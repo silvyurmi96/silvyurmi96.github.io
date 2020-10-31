@@ -1,0 +1,482 @@
+@media(max-width: 465px) {
+  .projectSection {
+      text-align: center;
+      padding: 1rem;
+      background-color: #252525;
+  }
+
+}
+
+@media(max-width: 1238px){
+  .btn-primary {
+margin-bottom: 1rem;
+
+  }
+  .card-link {
+    margin-left: 1.25rem;
+}
+
+}
+
+@media (max-width:992px) {
+  .morecontainer{
+  grid-template-columns: repeat(auto-fill,minmax(50%,1fr));
+  grid-template-rows: minmax(auto,auto);
+}
+
+
+.morebox{
+  grid-column: unset !important;
+  grid-row: unset !important;
+
+  }
+
+  .aboutRow .aboutmedeviedOne {
+    margin: 0;
+    float: none;
+    width: 100%;
+}
+.title h3 {
+  background: #323232;
+
+    padding: 1rem 0;
+     }
+#aboutMe{
+  height: 27rem;
+}
+.aboutmedeviedtwo{
+  width: 43.26%;
+margin-left: 2rem;
+}
+.aboutmedeviedthree{
+  width: 43.26%;
+margin-left: 2rem;
+
+}
+
+}
+
+
+@media(max-width: 930px) {
+
+.head-container p {
+    position: absolute;
+    color: #fff;
+    top: 14rem;
+    left: 47%;
+    z-index: 9999;
+    margin-bottom: .2rem;
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+}
+.log span {
+    color: #16c0f0;
+}
+
+.container h1 {
+    position: absolute;
+    color: #fff;
+    top: 16.5rem;
+    left: 35%;
+    z-index: 9999;
+    font-size: 220%;
+    margin-bottom: .2rem;
+    font-size: 2.5rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.jquery-script-ads {
+    position: absolute;
+    color: #fff;
+    top: 20rem;
+    left: 34%;
+    z-index: 9999;
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.bt {
+    position: absolute;
+    color: #fff;
+    top: 24rem;
+    left: 40%;
+    z-index: 9999;
+    font-size: 1.2rem;
+}
+
+
+      .logo {
+            position: fixed;
+            top: 0;
+            margin-top: 16px;
+      }
+
+      nav ul {
+            max-height: 0px;
+            background: #000;
+            z-index: 10000;
+            padding: 0;
+      }
+
+      nav.black ul {
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 100000000;
+      }
+
+      .showing {
+            max-height: 34em;
+      }
+
+      nav ul li {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 24px;
+            text-align: center;
+      }
+
+      .menu-icon {
+            display: block;
+      }
+.menu-icon :a visited{
+line-height: 60px;
+width: 100%;
+background: #000;
+text-align: right;
+box-sizing: border-box;
+padding: 15px 24px;
+cursor: pointer;
+color: #fff;
+      }
+
+      .social-links .row {
+        max-width: 100%;
+        margin: 0 auto;
+        width: 90%;
+        width: 80%;
+      }
+
+
+    }
+
+
+
+@media(max-width: 800px) {
+#aboutMe{
+    height: 44rem !important;
+
+}
+
+  .aboutmedeviedtwo {
+      width: 100%;
+      padding: 2rem;
+  }
+  .aboutmedeviedthree{
+    width: 75%;
+    padding: 0 2rem;
+
+  }
+
+
+}
+
+@media(max-width: 668px){
+
+
+.head-container p {
+    position: absolute;
+    color: #fff;
+    top: 14rem;
+    left: 44%;
+    z-index: 9999;
+    margin-bottom: .2rem;
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container h1 {
+    position: absolute;
+    color: #fff;
+    top: 16.5rem;
+    left: 30%;
+    z-index: 9999;
+    font-size: 220%;
+    margin-bottom: .2rem;
+    font-size: 2.5rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.jquery-script-ads {
+    position: absolute;
+    color: #fff;
+    top: 20rem;
+    left: 27%;
+    z-index: 9999;
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.bt {
+    position: absolute;
+    color: #fff;
+    top: 24rem;
+    left: 36%;
+    z-index: 9999;
+    font-size: 1.2rem;
+}
+
+
+
+
+}
+
+
+@media(max-width: 552px){
+  .aboutmedeviedtwo {
+    width: 100%;
+    padding: 1rem 1rem 0rem 1rem;
+}
+
+  .aboutmedeviedthree {
+
+    width: 90%;
+    padding: 2rem;
+
+}
+
+
+.head-container p {
+    position: absolute;
+    color: #fff;
+    top: 14rem;
+    left: 40%;
+    z-index: 9999;
+    margin-bottom: .2rem;
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container h1 {
+    position: absolute;
+    color: #fff;
+    top: 16.5rem;
+    left: 28%;
+    z-index: 9999;
+    font-size: 220%;
+    margin-bottom: .2rem;
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.jquery-script-ads {
+    position: absolute;
+    color: #fff;
+    top: 20rem;
+    left: 22%;
+    z-index: 9999;
+    font-size: 1.3rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.bt {
+    position: absolute;
+    color: #fff;
+    top: 24rem;
+    left: 32%;
+    z-index: 9999;
+    font-size: 1.3rem;
+}
+ h2 {
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+.project-filter button {
+
+    padding: .5rem .4rem;
+
+
+
+}
+.gameanime{
+  padding: 1rem;
+}
+ }
+
+
+
+
+@media(max-width: 472px){
+.container  h2{
+font-size: 1.5rem;
+margin-top: 2rem;
+  }
+
+
+.social-links .row {
+  max-width: 100%;
+  margin: 0 auto;
+  width: 90%;
+  width: 80%;
+}
+.jquery-script-ads {
+    position: absolute;
+    color: #fff;
+    top: 19rem;
+    left: 22%;
+    z-index: 9999;
+    font-size: 1.3rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+}
+
+@media(max-width: 431px){
+
+
+.head-container p {
+    position: absolute;
+    color: #fff;
+    top: 14rem;
+    left: 38%;
+    z-index: 9999;
+    margin-bottom: .2rem;
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+}
+.card-link {
+  width: 65%;
+  margin: 1rem;
+}
+
+.container h1 {
+    position: absolute;
+    color: #fff;
+    top: 16.5rem;
+    left: 23%;
+    z-index: 9999;
+    font-size: 220%;
+    margin-bottom: .2rem;
+    font-size: 1.7rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.jquery-script-ads {
+    position: absolute;
+    color: #fff;
+    top: 19rem;
+    left: 19%;
+    z-index: 9999;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.bt {
+    position: absolute;
+    color: #fff;
+    top: 22rem;
+    left: 31%;
+    z-index: 9999;
+    font-size: 1.2rem;
+}
+
+.bt a {
+    color: #fff;
+    padding: .5rem .7rem;
+    text-decoration: none !important;
+    font-size: 1rem;
+}
+
+#aboutMe {
+    height: 47rem !important;
+}
+
+.aboutmedeviedtwo {
+    width: 100%;
+    padding: 0;
+    margin: auto;
+}
+
+.aboutmedeviedthree {
+    width: 94%;
+    padding: 2rem;
+
+    padding: 1rem;
+    margin: auto;
+
+    margin-left: 1rem;
+
+}
+
+
+
+
+}
+@media(max-width: 394px){
+
+
+
+}
+
+@media(max-width: 368px){
+
+.head-container p {
+    position: absolute;
+    color: #fff;
+    top: 14rem;
+    left: 40%;
+    z-index: 9999;
+    margin-bottom: .2rem;
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container h1 {
+  position: absolute;
+color: #fff;
+top: 16.5rem;
+left: 26%;
+z-index: 9999;
+font-size: 220%;
+margin-bottom: .2rem;
+font-size: 1.7rem;
+font-family: 'Roboto', sans-serif;
+}
+
+
+.jquery-script-ads {
+  position: absolute;
+color: #fff;
+top: 20rem;
+left: 23%;
+z-index: 9999;
+font-size: 1rem;
+font-family: 'Roboto', sans-serif;
+}
+
+.bt {
+    position: absolute;
+    color: #fff;
+    top: 24rem;
+    left: 26%;
+    z-index: 9999;
+    font-size: 1.2rem;
+}
+
+.project-filter button {
+
+    padding: .5rem .3rem;
+    margin: 0 .7rem 0 0;
+
+
+
+
+
+}
+
+@media(max-width: 992px){
+.span_1_of_3 {
+    width: 42.26%;
+    margin: 1rem 1rem;
+}
+}
