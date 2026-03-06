@@ -6,28 +6,10 @@
 <title>Silvy Rahman Urmi — Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
 <style>
-:root {
-  --bg: #07070d;
-  --surface: #0e0e18;
-  --card: #13131e;
-  --border: rgba(255,255,255,0.07);
-  --accent: #d4a96a;
-  --accent2: #6ab4d4;
-  --accent3: #d46aaa;
-  --text: #ece8e0;
-  --muted: #6e6e82;
-}
+:root{--bg:#07070d;--surface:#0e0e18;--card:#13131e;--border:rgba(255,255,255,0.07);--accent:#d4a96a;--accent2:#6ab4d4;--accent3:#d46aaa;--text:#ece8e0;--muted:#6e6e82;}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:'DM Mono',monospace;
-  font-size:14px;
-  line-height:1.75;
-  overflow-x:hidden;
-  cursor:none;
-}
+body{background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;font-size:14px;line-height:1.75;overflow-x:hidden;cursor:none;}
 #cur{position:fixed;width:10px;height:10px;background:var(--accent);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen;}
 #cur-ring{position:fixed;width:38px;height:38px;border:1px solid rgba(212,169,106,.5);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .14s ease;}
 body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.028;pointer-events:none;z-index:9990;}
@@ -52,7 +34,6 @@ nav.scrolled{border-bottom-color:var(--border);}
 .orb2{width:450px;height:450px;background:radial-gradient(circle,rgba(106,180,212,.1),transparent 70%);bottom:-100px;left:-100px;animation:drift 13s ease-in-out infinite reverse;}
 .orb3{width:320px;height:320px;background:radial-gradient(circle,rgba(212,106,170,.08),transparent 70%);top:40%;left:35%;animation:drift 8s ease-in-out infinite 3s;}
 @keyframes drift{0%,100%{transform:translate(0,0);}33%{transform:translate(30px,-40px);}66%{transform:translate(-20px,25px);}}
-
 .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 340px;gap:80px;align-items:center;max-width:1200px;width:100%;margin:0 auto;}
 .chip{display:inline-flex;align-items:center;gap:10px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:22px;opacity:0;animation:riseUp .8s .1s forwards;}
 .chip::before{content:'';width:32px;height:1px;background:var(--accent);}
@@ -61,13 +42,11 @@ h1{font-family:'Syne',sans-serif;font-size:clamp(50px,7.5vw,86px);font-weight:80
 .hero-role{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;font-style:italic;color:var(--muted);margin-bottom:28px;opacity:0;animation:riseUp .8s .5s forwards;}
 .hero-desc{color:var(--muted);font-size:13px;line-height:2;max-width:500px;margin-bottom:44px;opacity:0;animation:riseUp .8s .7s forwards;}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:riseUp .8s .9s forwards;}
-.btn{display:inline-flex;align-items:center;gap:8px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:14px 30px;text-decoration:none;transition:all .3s;}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:14px 30px;text-decoration:none;transition:all .3s;cursor:none;}
 .btn-gold{background:var(--accent);color:#07070d;font-weight:500;}
 .btn-gold:hover{box-shadow:0 16px 48px rgba(212,169,106,.35);transform:translateY(-2px);}
 .btn-ghost{border:1px solid var(--border);color:var(--muted);}
 .btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);}
-
-/* Hero right */
 .hero-right{opacity:0;animation:fadeIn 1.2s .4s forwards;}
 .hero-card{background:var(--card);border:1px solid var(--border);padding:32px;position:relative;}
 .hero-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent3));}
@@ -75,7 +54,6 @@ h1{font-family:'Syne',sans-serif;font-size:clamp(50px,7.5vw,86px);font-weight:80
 .hc-name{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:4px;}
 .hc-title{font-size:11px;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px;}
 .hc-row{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;font-size:12px;color:var(--muted);}
-.hc-icon{color:var(--accent);font-size:14px;flex-shrink:0;margin-top:1px;}
 .hc-divider{height:1px;background:var(--border);margin:20px 0;}
 .skills-wrap{display:flex;flex-wrap:wrap;gap:8px;}
 .skill-tag{padding:5px 12px;border:1px solid var(--border);font-size:10px;letter-spacing:.08em;color:var(--muted);transition:all .3s;}
@@ -84,7 +62,6 @@ h1{font-family:'Syne',sans-serif;font-size:clamp(50px,7.5vw,86px);font-weight:80
 .stat{background:var(--card);padding:16px 10px;text-align:center;}
 .stat-n{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:var(--accent);}
 .stat-l{font-size:9px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:2px;}
-
 @keyframes riseUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 
@@ -106,14 +83,14 @@ h1{font-family:'Syne',sans-serif;font-size:clamp(50px,7.5vw,86px);font-weight:80
 .ah-item:hover{border-left-color:var(--accent);}
 .ah-item h4{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;color:var(--accent);margin-bottom:6px;text-transform:uppercase;letter-spacing:.08em;}
 .ah-item p{font-size:12px;color:var(--muted);}
-.lang-list{display:flex;flex-direction:column;gap:16px;margin-top:32px;}
+.lang-list{display:flex;flex-direction:column;gap:16px;}
 .lang-item{display:flex;align-items:center;gap:16px;}
 .lang-name{width:80px;font-size:12px;color:var(--text);}
 .lang-level{font-size:11px;color:var(--muted);width:60px;}
 .lang-bar{flex:1;height:2px;background:var(--border);}
 .lang-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));}
 
-/* EXPERIENCE */
+/* TIMELINE */
 .timeline{position:relative;padding-left:32px;}
 .timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--border);}
 .tl-item{position:relative;margin-bottom:56px;opacity:0;transform:translateX(-16px);transition:opacity .6s,transform .6s;}
@@ -141,17 +118,17 @@ h1{font-family:'Syne',sans-serif;font-size:clamp(50px,7.5vw,86px);font-weight:80
 .proj-desc{font-size:12px;color:var(--muted);line-height:1.85;margin-bottom:20px;}
 .proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px;}
 .proj-tag{font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;background:rgba(212,169,106,.08);color:var(--accent);border:1px solid rgba(212,169,106,.15);}
-.proj-links{display:flex;gap:12px;}
-.proj-link{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color .3s;}
+.proj-links{display:flex;gap:12px;flex-wrap:wrap;}
+.proj-link{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color .3s;cursor:none;background:none;border:none;font-family:'DM Mono',monospace;padding:0;}
 .proj-link:hover{color:var(--accent);}
 .proj-link svg{width:12px;height:12px;}
-.proj-featured{grid-column:span 2;background:linear-gradient(135deg,#13131e 0%,#0f1520 100%);border:1px solid rgba(106,180,212,.15);}
+.proj-featured{grid-column:span 2;background:linear-gradient(135deg,#13131e 0%,#0f1520 100%);}
 .proj-featured::before{background:linear-gradient(90deg,transparent,var(--accent2),transparent);}
 .proj-featured:hover{background:linear-gradient(135deg,#16162a 0%,#111a28 100%);}
 
 /* RESEARCH */
 .research-list{display:flex;flex-direction:column;gap:1px;background:var(--border);}
-.res-item{background:var(--card);padding:36px 40px;display:grid;grid-template-columns:80px 1fr auto;gap:32px;align-items:center;transition:background .3s;opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s,background .3s;}
+.res-item{background:var(--card);padding:36px 40px;display:grid;grid-template-columns:80px 1fr auto;gap:32px;align-items:center;opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s,background .3s;}
 .res-item.visible{opacity:1;transform:translateY(0);}
 .res-item:hover{background:#1a1a28;}
 .res-year{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;color:rgba(255,255,255,.08);}
@@ -161,7 +138,7 @@ h1{font-family:'Syne',sans-serif;font-size:clamp(50px,7.5vw,86px);font-weight:80
 .res-link{display:flex;align-items:center;gap:8px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:10px 18px;transition:all .3s;white-space:nowrap;}
 .res-link:hover{border-color:var(--accent);color:var(--accent);}
 
-/* SKILLS */
+/* SKILLS GRID */
 .skills-section-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);}
 .skill-group{background:var(--card);padding:32px 28px;}
 .skill-group h3{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:20px;}
@@ -181,16 +158,41 @@ h1{font-family:'Syne',sans-serif;font-size:clamp(50px,7.5vw,86px);font-weight:80
 .cli-label{font-size:9px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;margin-bottom:2px;}
 .cli-value{font-size:13px;color:var(--text);}
 
-/* FOOTER */
 footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
 .foot-name{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:300;color:var(--accent);}
 .foot-copy{font-size:11px;color:var(--muted);}
 
-/* REVEAL */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 
-/* RESPONSIVE */
+/* CODE MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;backdrop-filter:blur(8px);}
+.modal-overlay.open{opacity:1;visibility:visible;}
+.modal-box{background:#0d0d18;border:1px solid var(--border);width:100%;max-width:860px;max-height:88vh;display:flex;flex-direction:column;position:relative;transform:translateY(20px);transition:transform .3s;}
+.modal-overlay.open .modal-box{transform:translateY(0);}
+.modal-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent3));}
+.modal-header{display:flex;align-items:center;justify-content:space-between;padding:20px 28px;border-bottom:1px solid var(--border);flex-shrink:0;}
+.modal-title{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;}
+.modal-meta{font-size:10px;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;margin-top:3px;}
+.modal-actions{display:flex;align-items:center;gap:12px;}
+.modal-copy{background:rgba(212,169,106,.1);border:1px solid rgba(212,169,106,.2);color:var(--accent);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:8px 16px;cursor:none;transition:all .3s;}
+.modal-copy:hover{background:rgba(212,169,106,.2);}
+.modal-copy.copied{background:rgba(106,212,106,.1);border-color:rgba(106,212,106,.2);color:#6ad46a;}
+.modal-close{width:32px;height:32px;background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--muted);font-size:16px;display:flex;align-items:center;justify-content:center;cursor:none;transition:all .3s;flex-shrink:0;}
+.modal-close:hover{background:rgba(255,255,255,.1);color:var(--text);}
+.modal-body{overflow-y:auto;flex:1;}
+.modal-body::-webkit-scrollbar{width:6px;}
+.modal-body::-webkit-scrollbar-track{background:transparent;}
+.modal-body::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+.code-block{margin:0;padding:28px;font-family:'DM Mono',monospace;font-size:12.5px;line-height:1.8;color:#c9d1d9;overflow-x:auto;white-space:pre;}
+/* Syntax highlight */
+.kw{color:#ff7b72;}
+.fn{color:#d2a8ff;}
+.st{color:#a5d6ff;}
+.cm{color:#8b949e;font-style:italic;}
+.nm{color:#79c0ff;}
+.nb{color:#ffa657;}
+
 @media(max-width:1000px){
   .hero-inner,.about-grid,.contact-wrap{grid-template-columns:1fr;}
   .hero-right{display:none;}
@@ -198,30 +200,26 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;align-i
   .proj-featured{grid-column:span 1;}
   .skills-section-grid{grid-template-columns:repeat(2,1fr);}
   .res-item{grid-template-columns:1fr;gap:16px;}
-  .res-year{font-size:24px;}
   nav{padding:18px 24px;}
   .section{padding:80px 24px;}
   .section-inner{padding:0 24px;}
-  footer{flex-direction:column;gap:12px;text-align:center;}
+  footer{flex-direction:column;gap:12px;text-align:center;padding:24px;}
 }
 @media(max-width:640px){
-  nav{padding:16px 20px;}
   .nav-links{gap:16px;}
   .skills-section-grid{grid-template-columns:1fr;}
   #hero{padding:120px 20px 80px;}
+  .modal-box{max-height:95vh;}
+  .code-block{font-size:11px;padding:18px;}
 }
 </style>
 </head>
 <body>
-
 <div id="cur"></div>
 <div id="cur-ring"></div>
 
-<!-- NAV -->
 <nav id="navbar">
-  <a class="nav-logo" href="#">
-    <span class="nav-dot"></span> Silvy Rahman Urmi
-  </a>
+  <a class="nav-logo" href="#"><span class="nav-dot"></span> Silvy Rahman Urmi</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
@@ -231,26 +229,19 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;align-i
   </ul>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <div class="hero-grid-bg"></div>
-  <div class="orb orb1"></div>
-  <div class="orb orb2"></div>
-  <div class="orb orb3"></div>
+  <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
   <div class="hero-inner">
-    <div class="hero-left">
+    <div>
       <div class="chip">Available for opportunities</div>
       <h1>Silvy<span class="name-italic">Rahman Urmi</span></h1>
       <p class="hero-role">Fullstack Developer &amp; Web Engineer</p>
-      <p class="hero-desc">
-        Master's student in Web Engineering at TU Chemnitz. I build intelligent, 
-        human-centred applications — from computer vision tools to full-stack web platforms. 
-        Passionate about the intersection of AI and accessible technology.
-      </p>
+      <p class="hero-desc">Master&#39;s student in Web Engineering at TU Chemnitz. I build intelligent, human-centred applications &mdash; from computer vision tools to full-stack web platforms. Passionate about the intersection of AI and accessible technology.</p>
       <div class="hero-ctas">
-        <a href="#projects" class="btn btn-gold">View Projects ↓</a>
-        <a href="#contact" class="btn btn-ghost">Get in Touch →</a>
-        <a href="https://github.com/silvyurmi96" target="_blank" class="btn btn-ghost">GitHub ↗</a>
+        <a href="#projects" class="btn btn-gold">View Projects &darr;</a>
+        <a href="#contact" class="btn btn-ghost">Get in Touch &rarr;</a>
+        <a href="https://github.com/silvyurmi96" target="_blank" class="btn btn-ghost">GitHub &nearr;</a>
       </div>
     </div>
     <div class="hero-right">
@@ -258,15 +249,12 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;align-i
         <div class="hc-avatar">S</div>
         <div class="hc-name">Silvy Rahman Urmi</div>
         <div class="hc-title">Fullstack Developer &amp; Web Engineer</div>
-        <div class="hc-row"><span class="hc-icon">📍</span><span>Chemnitz, Germany</span></div>
-        <div class="hc-row"><span class="hc-icon">🎓</span><span>M.Sc. Web Engineering · TU Chemnitz</span></div>
-        <div class="hc-row"><span class="hc-icon">✉️</span><span>silvyrahman96@gmail.com</span></div>
+        <div class="hc-row"><span style="color:var(--accent)">&#128205;</span>&nbsp; Chemnitz, Germany</div>
+        <div class="hc-row"><span style="color:var(--accent)">&#127891;</span>&nbsp; M.Sc. Web Engineering &middot; TU Chemnitz</div>
+        <div class="hc-row"><span style="color:var(--accent)">&#9993;</span>&nbsp; silvyrahman96@gmail.com</div>
         <div class="hc-divider"></div>
         <div class="skills-wrap">
-          <span class="skill-tag">Python</span><span class="skill-tag">Django</span>
-          <span class="skill-tag">React</span><span class="skill-tag">OpenCV</span>
-          <span class="skill-tag">MediaPipe</span><span class="skill-tag">Docker</span>
-          <span class="skill-tag">AWS</span><span class="skill-tag">ML</span>
+          <span class="skill-tag">Python</span><span class="skill-tag">Django</span><span class="skill-tag">React</span><span class="skill-tag">OpenCV</span><span class="skill-tag">MediaPipe</span><span class="skill-tag">Docker</span><span class="skill-tag">AWS</span><span class="skill-tag">ML</span>
         </div>
       </div>
       <div class="hero-stats">
@@ -278,97 +266,84 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;align-i
   </div>
 </section>
 
-<!-- ABOUT -->
 <div class="section-full" id="about">
   <div class="section-inner">
     <div class="sec-eyebrow">About Me</div>
     <h2 class="sec-title">Crafting digital <em>experiences</em></h2>
     <div class="about-grid">
       <div class="about-text reveal">
-        <p>I'm <strong>Silvy Rahman Urmi</strong>, a Fullstack Developer and Web Engineer currently pursuing my Master's degree at <strong>Technische Universität Chemnitz</strong>. My work lives at the intersection of web engineering, computer vision, and human-computer interaction.</p>
+        <p>I&#39;m <strong>Silvy Rahman Urmi</strong>, a Fullstack Developer and Web Engineer currently pursuing my Master&#39;s degree at <strong>Technische Universit&auml;t Chemnitz</strong>. My work lives at the intersection of web engineering, computer vision, and human-computer interaction.</p>
         <p>From building Django-powered research platforms at Fraunhofer IVI to developing AI-driven interfaces that respond to eye movements and hand gestures, I love pushing the boundaries of what technology can do for people. Currently working as a <strong>Fullstack Developer</strong> at Koinon, TU Munich.</p>
-        <p>Beyond code, I'm a published researcher with work in machine learning and distributed systems — and a firm believer that the best software is the software that feels invisible.</p>
+        <p>Beyond code, I&#39;m a published researcher with work in machine learning and distributed systems &mdash; and a firm believer that the best software is the software that feels invisible.</p>
         <div class="about-highlights">
-          <div class="ah-item"><h4>Education</h4><p>M.Sc. Web Engineering · TU Chemnitz</p></div>
+          <div class="ah-item"><h4>Education</h4><p>M.Sc. Web Engineering &middot; TU Chemnitz</p></div>
           <div class="ah-item"><h4>Research</h4><p>2 international publications</p></div>
           <div class="ah-item"><h4>Experience</h4><p>Research, TA &amp; Fullstack Dev</p></div>
           <div class="ah-item"><h4>Passion</h4><p>CV, ML &amp; Accessible UX</p></div>
         </div>
       </div>
       <div class="reveal" style="transition-delay:.2s">
-        <div style="background:var(--card);border:1px solid var(--border);padding:32px;">
+        <div style="background:var(--card);border:1px solid var(--border);padding:32px;margin-bottom:20px;">
           <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;">Tech Stack</div>
           <div class="skills-wrap">
-            <span class="skill-tag">Python</span><span class="skill-tag">Django</span>
-            <span class="skill-tag">JavaScript</span><span class="skill-tag">React</span>
-            <span class="skill-tag">PHP</span><span class="skill-tag">HTML/CSS</span>
-            <span class="skill-tag">OpenCV</span><span class="skill-tag">MediaPipe</span>
-            <span class="skill-tag">DeepFace</span><span class="skill-tag">Docker</span>
-            <span class="skill-tag">Minio</span><span class="skill-tag">AWS</span>
-            <span class="skill-tag">MySQL</span><span class="skill-tag">SQLite</span>
-            <span class="skill-tag">Figma</span><span class="skill-tag">Adobe XD</span>
-            <span class="skill-tag">Java</span><span class="skill-tag">C/C++</span>
+            <span class="skill-tag">Python</span><span class="skill-tag">Django</span><span class="skill-tag">JavaScript</span><span class="skill-tag">React</span><span class="skill-tag">PHP</span><span class="skill-tag">HTML/CSS</span><span class="skill-tag">OpenCV</span><span class="skill-tag">MediaPipe</span><span class="skill-tag">DeepFace</span><span class="skill-tag">Docker</span><span class="skill-tag">Minio</span><span class="skill-tag">AWS</span><span class="skill-tag">MySQL</span><span class="skill-tag">SQLite</span><span class="skill-tag">Figma</span><span class="skill-tag">Adobe XD</span><span class="skill-tag">Java</span><span class="skill-tag">C/C++</span>
           </div>
         </div>
-        <div class="lang-list" style="margin-top:24px;background:var(--card);border:1px solid var(--border);padding:28px;">
+        <div style="background:var(--card);border:1px solid var(--border);padding:28px;">
           <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;">Languages</div>
-          <div class="lang-item"><span class="lang-name">Bangla</span><span class="lang-level">Native</span><div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div></div>
-          <div class="lang-item"><span class="lang-name">English</span><span class="lang-level">C1</span><div class="lang-bar"><div class="lang-fill" style="width:85%"></div></div></div>
-          <div class="lang-item"><span class="lang-name">German</span><span class="lang-level">A2</span><div class="lang-bar"><div class="lang-fill" style="width:25%"></div></div></div>
+          <div class="lang-list">
+            <div class="lang-item"><span class="lang-name">Bangla</span><span class="lang-level">Native</span><div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div></div>
+            <div class="lang-item"><span class="lang-name">English</span><span class="lang-level">C1</span><div class="lang-bar"><div class="lang-fill" style="width:85%"></div></div></div>
+            <div class="lang-item"><span class="lang-name">German</span><span class="lang-level">A2</span><div class="lang-bar"><div class="lang-fill" style="width:25%"></div></div></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- EXPERIENCE -->
 <div class="section" id="experience">
   <div class="sec-eyebrow">Career</div>
   <h2 class="sec-title">Work <em>Experience</em></h2>
   <div class="timeline">
-
     <div class="tl-item">
       <div class="tl-dot"></div>
-      <div class="tl-period">June 2025 — September 2026</div>
-      <div class="tl-role">Fullstack Developer <span style="color:var(--muted);font-weight:400;font-size:14px">· Student Job</span></div>
-      <div class="tl-company">Koinon · Technical University of Munich, Munich</div>
+      <div class="tl-period">June 2025 &mdash; September 2026</div>
+      <div class="tl-role">Fullstack Developer <span style="color:var(--muted);font-weight:400;font-size:14px">&middot; Student Job</span></div>
+      <div class="tl-company">Koinon &middot; Technical University of Munich, Munich</div>
       <ul class="tl-bullets">
         <li>Building and maintaining full-stack web features for the Koinon platform.</li>
         <li>Collaborating in an agile team environment across frontend and backend development cycles.</li>
         <li>Contributing to platform architecture, code reviews, and feature delivery.</li>
       </ul>
     </div>
-
     <div class="tl-item">
       <div class="tl-dot"></div>
       <div class="tl-period">2023</div>
       <div class="tl-role">Research Assistant</div>
-      <div class="tl-company">Fraunhofer IVI · Dresden, Germany</div>
+      <div class="tl-company">Fraunhofer IVI &middot; Dresden, Germany</div>
       <ul class="tl-bullets">
         <li>Developed a full application using the Django framework.</li>
         <li>Managed user data storage and authentication processes.</li>
         <li>Integrated existing projects through app ID implementation.</li>
-        <li>Established CI/CD pipeline and maintained code quality with Black &amp; Flake8.</li>
+        <li>Established CI/CD pipeline; maintained code quality with Black &amp; Flake8.</li>
         <li>Utilised Docker and Minio to enhance project capabilities.</li>
       </ul>
     </div>
-
     <div class="tl-item">
       <div class="tl-dot"></div>
-      <div class="tl-period">2020 — 2021</div>
+      <div class="tl-period">2020 &mdash; 2021</div>
       <div class="tl-role">Teaching Assistant</div>
-      <div class="tl-company">North South University · Dhaka, Bangladesh</div>
+      <div class="tl-company">North South University &middot; Dhaka, Bangladesh</div>
       <ul class="tl-bullets">
         <li>Assisted faculty in delivering coursework and lab sessions to undergraduate students.</li>
         <li>Supported students with programming concepts, assignments, and project guidance.</li>
         <li>Collaborated with the department on curriculum support and assessment activities.</li>
       </ul>
     </div>
-
   </div>
 </div>
 
-<!-- PROJECTS -->
 <div class="section-full" id="projects">
   <div class="section-inner">
     <div class="sec-eyebrow">Work</div>
@@ -377,107 +352,88 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;align-i
 
       <div class="proj-card proj-featured">
         <div class="proj-num">01</div>
-        <div class="proj-icon">👁️</div>
+        <div class="proj-icon">&#128065;&#65039;</div>
         <div class="proj-name">Head &amp; Eye Controlled Mouse</div>
-        <div class="proj-desc">A real-time accessibility tool that lets users control their cursor entirely through head movement and eye blinks — no hands required. Uses MediaPipe facial landmark tracking, Eye Aspect Ratio (EAR) for blink detection, and smooth exponential cursor interpolation. Double-blink for left click, hold left eye closed for right click.</div>
-        <div class="proj-tags">
-          <span class="proj-tag">Python</span><span class="proj-tag">OpenCV</span>
-          <span class="proj-tag">MediaPipe</span><span class="proj-tag">PyAutoGUI</span>
-          <span class="proj-tag">Accessibility</span><span class="proj-tag">Computer Vision</span>
-        </div>
+        <div class="proj-desc">A real-time accessibility tool that lets users control their cursor entirely through head movement and eye blinks &mdash; no hands required. Uses MediaPipe facial landmark tracking, Eye Aspect Ratio (EAR) for blink detection, and smooth exponential cursor interpolation. Double-blink for left click, hold left eye closed for right click.</div>
+        <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">OpenCV</span><span class="proj-tag">MediaPipe</span><span class="proj-tag">PyAutoGUI</span><span class="proj-tag">Accessibility</span><span class="proj-tag">Computer Vision</span></div>
         <div class="proj-links">
-          <a href="https://github.com/silvyurmi96" class="proj-link" target="_blank">
+          <button class="proj-link" onclick="openModal('eye')">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
             View Code
-          </a>
+          </button>
         </div>
       </div>
 
       <div class="proj-card">
         <div class="proj-num">02</div>
-        <div class="proj-icon">🤚</div>
+        <div class="proj-icon">&#129304;</div>
         <div class="proj-name">Hand Gesture Mouse</div>
-        <div class="proj-desc">Controls the mouse cursor via hand gestures captured through a webcam. Supports cursor movement, left/right click via pinch gestures, and two-finger scroll mode — entirely hands-free interaction.</div>
-        <div class="proj-tags">
-          <span class="proj-tag">Python</span><span class="proj-tag">MediaPipe</span>
-          <span class="proj-tag">OpenCV</span><span class="proj-tag">Gesture Recognition</span>
-        </div>
+        <div class="proj-desc">Controls the mouse cursor via hand gestures captured through a webcam. Supports cursor movement, left/right click via pinch gestures, and two-finger scroll mode &mdash; entirely hands-free interaction.</div>
+        <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">MediaPipe</span><span class="proj-tag">OpenCV</span><span class="proj-tag">Gesture Recognition</span></div>
         <div class="proj-links">
-          <a href="https://github.com/silvyurmi96" class="proj-link" target="_blank">
+          <button class="proj-link" onclick="openModal('hand')">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
             View Code
-          </a>
+          </button>
         </div>
       </div>
 
       <div class="proj-card">
         <div class="proj-num">03</div>
-        <div class="proj-icon">😊</div>
+        <div class="proj-icon">&#128522;</div>
         <div class="proj-name">Real-Time Emotion Detector</div>
         <div class="proj-desc">Detects emotion, age and gender from a live webcam feed using DeepFace. Features bias correction, EMA confidence smoothing, and a dynamic sidebar with per-emotion confidence bars.</div>
-        <div class="proj-tags">
-          <span class="proj-tag">Python</span><span class="proj-tag">DeepFace</span>
-          <span class="proj-tag">OpenCV</span><span class="proj-tag">Deep Learning</span>
-        </div>
+        <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">DeepFace</span><span class="proj-tag">OpenCV</span><span class="proj-tag">Deep Learning</span></div>
         <div class="proj-links">
-          <a href="https://github.com/silvyurmi96" class="proj-link" target="_blank">
+          <button class="proj-link" onclick="openModal('emotion')">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
             View Code
-          </a>
+          </button>
         </div>
       </div>
 
       <div class="proj-card">
         <div class="proj-num">04</div>
-        <div class="proj-icon">🚗</div>
+        <div class="proj-icon">&#128663;</div>
         <div class="proj-name">Velocity Estimation via Optical Flow</div>
-        <div class="proj-desc">Research-level project addressing road safety in Bangladesh using computer vision. Applies optical flow algorithms to estimate vehicle velocities from video footage to support traffic analysis and accident prevention.</div>
-        <div class="proj-tags">
-          <span class="proj-tag">Python</span><span class="proj-tag">OpenCV</span>
-          <span class="proj-tag">Optical Flow</span><span class="proj-tag">Research</span>
-        </div>
+        <div class="proj-desc">Research-level project addressing road safety in Bangladesh using computer vision. Applies optical flow algorithms to estimate vehicle velocities from video footage to support traffic analysis.</div>
+        <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">OpenCV</span><span class="proj-tag">Optical Flow</span><span class="proj-tag">Research</span></div>
         <div class="proj-links">
-          <a href="https://github.com/silvyurmi96" class="proj-link" target="_blank">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            View Code
+          <a href="https://github.com/silvyurmi96" target="_blank" class="proj-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            GitHub
           </a>
         </div>
       </div>
 
       <div class="proj-card">
         <div class="proj-num">05</div>
-        <div class="proj-icon">🏥</div>
+        <div class="proj-icon">&#127973;</div>
         <div class="proj-name">Hospital Management System</div>
         <div class="proj-desc">A web-based system enabling clinic administrators to manage patients, doctors and staff with full CRUD operations. Role-based access control with a clean admin panel interface.</div>
-        <div class="proj-tags">
-          <span class="proj-tag">PHP</span><span class="proj-tag">MySQL</span>
-          <span class="proj-tag">HTML/CSS</span><span class="proj-tag">Web Dev</span>
-        </div>
+        <div class="proj-tags"><span class="proj-tag">PHP</span><span class="proj-tag">MySQL</span><span class="proj-tag">HTML/CSS</span><span class="proj-tag">Web Dev</span></div>
         <div class="proj-links">
-          <a href="https://github.com/silvyurmi96" class="proj-link" target="_blank">
+          <a href="https://github.com/silvyurmi96" target="_blank" class="proj-link">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            View Code
+            GitHub
           </a>
         </div>
       </div>
 
       <div class="proj-card">
         <div class="proj-num">06</div>
-        <div class="proj-icon">🎓</div>
+        <div class="proj-icon">&#127891;</div>
         <div class="proj-name">Coaching Center System</div>
-        <div class="proj-desc">A full web application for managing coaching centre operations — student records, schedules, and instructor assignments — with a PHP &amp; MySQL backend and a responsive frontend.</div>
-        <div class="proj-tags">
-          <span class="proj-tag">HTML5</span><span class="proj-tag">CSS3</span>
-          <span class="proj-tag">JavaScript</span><span class="proj-tag">PHP</span>
-        </div>
+        <div class="proj-desc">A full web application for managing coaching centre operations &mdash; student records, schedules, and instructor assignments &mdash; with a PHP &amp; MySQL backend and responsive frontend.</div>
+        <div class="proj-tags"><span class="proj-tag">HTML5</span><span class="proj-tag">CSS3</span><span class="proj-tag">JavaScript</span><span class="proj-tag">PHP</span></div>
         <div class="proj-links">
-          <a href="https://github.com/silvyurmi96/327-project" class="proj-link" target="_blank">
+          <a href="https://github.com/silvyurmi96/327-project" target="_blank" class="proj-link">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             Live Demo
           </a>
-          <a href="https://github.com/silvyurmi96/327-project" class="proj-link" target="_blank">
+          <a href="https://github.com/silvyurmi96/327-project" target="_blank" class="proj-link">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            View Code
+            Code
           </a>
         </div>
       </div>
@@ -486,7 +442,6 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;align-i
   </div>
 </div>
 
-<!-- RESEARCH -->
 <div class="section" id="research">
   <div class="sec-eyebrow">Publications</div>
   <h2 class="sec-title">Research &amp; <em>Publications</em></h2>
@@ -496,92 +451,46 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;align-i
       <div class="res-content">
         <h3>Forecasting the Outcome of the Next ODI Cricket Matches to Be Played</h3>
         <p>Md. Minhazul Abedin, <strong>Silvy Urmi</strong>, Md. Samiur Rahman</p>
-        <div class="res-journal">International Journal of Recent Technology and Engineering · Vol. 8, No. 4 · DOI: 10.35940/ijrte.d4505.118419</div>
+        <div class="res-journal">International Journal of Recent Technology and Engineering &middot; Vol. 8, No. 4 &middot; DOI: 10.35940/ijrte.d4505.118419</div>
       </div>
-      <a href="https://scholar.google.com/scholar?q=forecasting+the+outcome+of+the+next+odi+cricket+matches+to+be+played" target="_blank" class="res-link">Read ↗</a>
+      <a href="https://scholar.google.com/scholar?q=forecasting+the+outcome+of+the+next+odi+cricket+matches+to+be+played" target="_blank" class="res-link">Read &nearr;</a>
     </div>
     <div class="res-item">
       <div class="res-year">2019</div>
       <div class="res-content">
-        <h3>HashXplorer — A Distributed System for Hash Matching</h3>
+        <h3>HashXplorer &mdash; A Distributed System for Hash Matching</h3>
         <p>Md. Amdadul Bari, Rabeya Sultana, <strong>Silvy Rahman Urmi</strong>, AKM Bahalul Haque</p>
-        <div class="res-journal">International Research Journal of Engineering and Technology (IRJET) · Vol. 4, Issue 09, Sep 2019</div>
+        <div class="res-journal">International Research Journal of Engineering and Technology (IRJET) &middot; Vol. 4, Issue 09, Sep 2019</div>
       </div>
-      <a href="https://scholar.google.com/scholar?q=hashxplorer" target="_blank" class="res-link">Read ↗</a>
+      <a href="https://scholar.google.com/scholar?q=hashxplorer" target="_blank" class="res-link">Read &nearr;</a>
     </div>
   </div>
 </div>
 
-<!-- SKILLS -->
 <div class="section-full">
   <div class="section-inner">
     <div class="sec-eyebrow">Expertise</div>
     <h2 class="sec-title">Skills &amp; <em>Technologies</em></h2>
     <div class="skills-section-grid">
-      <div class="skill-group">
-        <h3>Frontend</h3>
-        <div class="skill-items">
-          <div class="sk-item">HTML5 &amp; CSS3</div>
-          <div class="sk-item">JavaScript</div>
-          <div class="sk-item">React</div>
-          <div class="sk-item">Figma &amp; Adobe XD</div>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h3>Backend</h3>
-        <div class="skill-items">
-          <div class="sk-item">Python &amp; Django</div>
-          <div class="sk-item">PHP</div>
-          <div class="sk-item">Java &amp; C/C++</div>
-          <div class="sk-item">REST APIs</div>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h3>AI / Computer Vision</h3>
-        <div class="skill-items">
-          <div class="sk-item">OpenCV</div>
-          <div class="sk-item">MediaPipe</div>
-          <div class="sk-item">DeepFace</div>
-          <div class="sk-item">Machine Learning</div>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h3>DevOps &amp; Cloud</h3>
-        <div class="skill-items">
-          <div class="sk-item">Docker &amp; Minio</div>
-          <div class="sk-item">AWS</div>
-          <div class="sk-item">CI/CD Pipelines</div>
-          <div class="sk-item">MySQL &amp; SQLite</div>
-        </div>
-      </div>
+      <div class="skill-group"><h3>Frontend</h3><div class="skill-items"><div class="sk-item">HTML5 &amp; CSS3</div><div class="sk-item">JavaScript</div><div class="sk-item">React</div><div class="sk-item">Figma &amp; Adobe XD</div></div></div>
+      <div class="skill-group"><h3>Backend</h3><div class="skill-items"><div class="sk-item">Python &amp; Django</div><div class="sk-item">PHP</div><div class="sk-item">Java &amp; C/C++</div><div class="sk-item">REST APIs</div></div></div>
+      <div class="skill-group"><h3>AI / Computer Vision</h3><div class="skill-items"><div class="sk-item">OpenCV</div><div class="sk-item">MediaPipe</div><div class="sk-item">DeepFace</div><div class="sk-item">Machine Learning</div></div></div>
+      <div class="skill-group"><h3>DevOps &amp; Cloud</h3><div class="skill-items"><div class="sk-item">Docker &amp; Minio</div><div class="sk-item">AWS</div><div class="sk-item">CI/CD Pipelines</div><div class="sk-item">MySQL &amp; SQLite</div></div></div>
     </div>
   </div>
 </div>
 
-<!-- CONTACT -->
 <div class="section" id="contact">
   <div class="sec-eyebrow">Say Hello</div>
   <div class="contact-wrap">
     <div class="contact-left reveal">
-      <h2>Let's work <strong>Together.</strong></h2>
-      <p>Whether you have a project in mind, a research collaboration, or just want to connect — I'm always open to interesting conversations.</p>
+      <h2>Let&#39;s work <strong>Together.</strong></h2>
+      <p>Whether you have a project in mind, a research collaboration, or just want to connect &mdash; I&#39;m always open to interesting conversations.</p>
       <div class="contact-links">
-        <a href="mailto:silvyrahman96@gmail.com" class="contact-link-item">
-          <span class="cli-icon">✉️</span>
-          <div><div class="cli-label">Email</div><div class="cli-value">silvyrahman96@gmail.com</div></div>
-        </a>
-        <a href="https://github.com/silvyurmi96" target="_blank" class="contact-link-item">
-          <span class="cli-icon">💻</span>
-          <div><div class="cli-label">GitHub</div><div class="cli-value">silvyurmi96</div></div>
-        </a>
-        <a href="https://www.linkedin.com/in/silvy-rahman-urmi-66a4571b7/" target="_blank" class="contact-link-item">
-          <span class="cli-icon">🔗</span>
-          <div><div class="cli-label">LinkedIn</div><div class="cli-value">silvy-rahman-urmi</div></div>
-        </a>
-        <a href="https://silvyurmi96.github.io/" target="_blank" class="contact-link-item">
-          <span class="cli-icon">🌐</span>
-          <div><div class="cli-label">Portfolio</div><div class="cli-value">silvyurmi96.github.io</div></div>
-        </a>
+        <a href="mailto:silvyrahman96@gmail.com" class="contact-link-item"><span class="cli-icon">&#9993;&#65039;</span><div><div class="cli-label">Email</div><div class="cli-value">silvyrahman96@gmail.com</div></div></a>
+        <a href="https://github.com/silvyurmi96" target="_blank" class="contact-link-item"><span class="cli-icon">&#128187;</span><div><div class="cli-label">GitHub</div><div class="cli-value">silvyurmi96</div></div></a>
+        <a href="https://www.linkedin.com/in/silvy-rahman-urmi-66a4571b7/" target="_blank" class="contact-link-item"><span class="cli-icon">&#128279;</span><div><div class="cli-label">LinkedIn</div><div class="cli-value">silvy-rahman-urmi</div></div></a>
+        <a href="https://silvyurmi96.github.io/" target="_blank" class="contact-link-item"><span class="cli-icon">&#127760;</span><div><div class="cli-label">Portfolio</div><div class="cli-value">silvyurmi96.github.io</div></div></a>
       </div>
     </div>
     <div class="reveal" style="transition-delay:.2s;">
@@ -589,55 +498,124 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;align-i
         <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent3));"></div>
         <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;">Education Timeline</div>
         <div style="display:flex;flex-direction:column;gap:24px;">
-          <div>
-            <div style="font-size:10px;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px;">2021 — Present</div>
-            <div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:700;">M.Sc. Web Engineering</div>
-            <div style="font-size:12px;color:var(--muted);">Technische Universität Chemnitz</div>
-          </div>
+          <div><div style="font-size:10px;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px;">2021 &mdash; Present</div><div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:700;">M.Sc. Web Engineering</div><div style="font-size:12px;color:var(--muted);">Technische Universit&auml;t Chemnitz</div></div>
           <div style="height:1px;background:var(--border);"></div>
-          <div>
-            <div style="font-size:10px;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px;">2015 — 2020</div>
-            <div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:700;">B.Sc. Computer Science &amp; Engineering</div>
-            <div style="font-size:12px;color:var(--muted);">North South University, Dhaka · CGPA 3.07/4</div>
-          </div>
+          <div><div style="font-size:10px;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px;">2015 &mdash; 2020</div><div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:700;">B.Sc. Computer Science &amp; Engineering</div><div style="font-size:12px;color:var(--muted);">North South University, Dhaka &middot; CGPA 3.07/4</div></div>
           <div style="height:1px;background:var(--border);"></div>
-          <div>
-            <div style="font-size:10px;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px;">2012 — 2014</div>
-            <div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:700;">Higher Secondary Certificate (HSC)</div>
-            <div style="font-size:12px;color:var(--muted);">Cambrian College, Dhaka · GPA 5/5</div>
-          </div>
+          <div><div style="font-size:10px;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px;">2012 &mdash; 2014</div><div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:700;">Higher Secondary Certificate (HSC)</div><div style="font-size:12px;color:var(--muted);">Cambrian College, Dhaka &middot; GPA 5/5</div></div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div class="foot-name">Silvy Rahman Urmi</div>
-  <div class="foot-copy">© 2026 · Built with passion in Chemnitz 🇩🇪</div>
+  <div class="foot-copy">&copy; 2026 &middot; Built with passion in Chemnitz &#127465;&#127466;</div>
 </footer>
 
+<!-- CODE MODAL -->
+<div class="modal-overlay" id="codeModal" onclick="handleOverlayClick(event)">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title" id="modalTitle"></div>
+        <div class="modal-meta" id="modalMeta"></div>
+      </div>
+      <div class="modal-actions">
+        <button class="modal-copy" id="copyBtn" onclick="copyCode()">Copy Code</button>
+        <button class="modal-close" onclick="closeModal()">&#x2715;</button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <pre class="code-block" id="codeContent"></pre>
+    </div>
+  </div>
+</div>
+
 <script>
-// Custom cursor
-const cur = document.getElementById('cur');
-const ring = document.getElementById('cur-ring');
+// ── Cursor ──
+const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
-(function animRing(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing);})();
+(function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
 
-// Nav
+// ── Nav ──
 const nav=document.getElementById('navbar');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60));
 
-// Scroll reveal
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.12});
+// ── Reveal ──
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:.12});
 document.querySelectorAll('.reveal,.tl-item,.proj-card,.res-item').forEach(el=>obs.observe(el));
-
-// Stagger
 document.querySelectorAll('.proj-card').forEach((c,i)=>c.style.transitionDelay=(i*.08)+'s');
-document.querySelectorAll('.res-item').forEach((c,i)=>c.style.transitionDelay=(i*.1)+'s');
 document.querySelectorAll('.tl-item').forEach((c,i)=>c.style.transitionDelay=(i*.12)+'s');
+
+// ── Code data ──
+const CODE_DATA = {
+  eye: {
+    title: "Head & Eye Controlled Mouse",
+    meta: "eye_mouse.py  ·  Python  ·  OpenCV · MediaPipe",
+    code: "\"\"\"\nHead & Eye Controlled Mouse\n============================\nMove your HEAD to control the cursor.\nBlink BOTH eyes twice quickly = Left Click\nHold LEFT eye closed = Right Click\n\nRequirements:\n    pip install opencv-python mediapipe==0.10.9 pyautogui numpy\n\"\"\"\n\nimport cv2\nimport mediapipe as mp\nimport pyautogui\nimport numpy as np\nimport time\n\n# \u2500\u2500 Config \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nSMOOTHING            = 7      # cursor smoothness (higher = smoother)\nBLINK_THRESHOLD      = 0.20   # EAR below this = eye closed (tune if needed)\nDOUBLE_BLINK_GAP     = 0.5    # max seconds between 2 blinks = double blink\nRIGHT_CLICK_HOLD     = 0.6    # hold left eye this long = right click\nCLICK_COOLDOWN       = 0.7    # seconds between clicks\nNOSE_SENSITIVITY_X   = 3.5    # how much horizontal head movement maps to screen\nNOSE_SENSITIVITY_Y   = 3.5    # how much vertical head movement maps to screen\n\n# \u2500\u2500 Setup \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\npyautogui.FAILSAFE = False\nscreen_w, screen_h = pyautogui.size()\n\nmp_face_mesh = mp.solutions.face_mesh\nface_mesh    = mp_face_mesh.FaceMesh(\n    max_num_faces=1,\n    refine_landmarks=True,\n    min_detection_confidence=0.7,\n    min_tracking_confidence=0.7,\n)\n\ncap   = cv2.VideoCapture(0)\ncam_w = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))\ncam_h = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))\n\n# \u2500\u2500 Eye landmark indices \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n# Right eye\nR_TOP, R_BOT, R_L, R_R = 159, 145, 133, 33\n# Left eye\nL_TOP, L_BOT, L_L, L_R = 386, 374, 362, 263\n# Nose tip (used for head tracking)\nNOSE_TIP = 1\n\n# \u2500\u2500 State \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nsmooth_x, smooth_y    = screen_w // 2, screen_h // 2\nnose_origin_x         = None   # calibrated center position\nnose_origin_y         = None\nblink_times           = []\nlast_click            = 0\nleft_eye_closed_since = None\ncalibrated            = False\ncalibration_frames    = []\nCALIBRATION_COUNT     = 30     # average over 30 frames for stable origin\n\n\ndef ear(lm, top, bot, l, r):\n    \"\"\"Eye Aspect Ratio \u2014 lower means more closed.\"\"\"\n    v = np.linalg.norm([lm[top].x - lm[bot].x, lm[top].y - lm[bot].y])\n    h = np.linalg.norm([lm[l].x   - lm[r].x,   lm[l].y   - lm[r].y])\n    return v / (h + 1e-6)\n\n\ndef draw_eye_box(frame, lm, top, bot, l, r, color):\n    pts = [(int(lm[i].x * cam_w), int(lm[i].y * cam_h)) for i in [l, top, r, bot]]\n    for i in range(4):\n        cv2.line(frame, pts[i], pts[(i+1) % 4], color, 1)\n\n\nprint(\"Head Mouse running!\")\nprint(\"  Look straight ahead for 2 seconds to calibrate\")\nprint(\"  Then move your head to control the cursor\")\nprint(\"  Double blink = Left click\")\nprint(\"  Hold left eye closed = Right click\")\nprint(\"  Press Q to quit | Press R to recalibrate\")\n\nwhile True:\n    ret, frame = cap.read()\n    if not ret:\n        break\n\n    frame  = cv2.flip(frame, 1)\n    rgb    = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)\n    result = face_mesh.process(rgb)\n\n    status       = \"No face detected\"\n    status_color = (0, 0, 255)\n\n    if result.multi_face_landmarks:\n        lm = result.multi_face_landmarks[0].landmark\n\n        # \u2500\u2500 Eye aspect ratios (no drawing) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n        r_ear = ear(lm, R_TOP, R_BOT, R_L, R_R)\n        l_ear = ear(lm, L_TOP, L_BOT, L_L, L_R)\n\n        # Nose tip pixel position\n        nx = lm[NOSE_TIP].x\n        ny = lm[NOSE_TIP].y\n\n        # \u2500\u2500 Calibration phase \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n        if not calibrated:\n            calibration_frames.append((nx, ny))\n            progress = len(calibration_frames)\n            bar_w    = int((progress / CALIBRATION_COUNT) * (cam_w - 40))\n            cv2.rectangle(frame, (20, cam_h // 2 - 20), (20 + bar_w, cam_h // 2 + 20),\n                          (0, 255, 100), -1)\n            cv2.putText(frame, \"Look straight ahead... calibrating\",\n                        (20, cam_h // 2 - 30),\n                        cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1)\n\n            if progress >= CALIBRATION_COUNT:\n                nose_origin_x = np.mean([p[0] for p in calibration_frames])\n                nose_origin_y = np.mean([p[1] for p in calibration_frames])\n                calibrated    = True\n                print(\"Calibrated! You can now control the cursor.\")\n            continue  # skip mouse control until calibrated\n\n        # \u2500\u2500 Head movement \u2192 cursor \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n        dx = (nx - nose_origin_x) * screen_w * NOSE_SENSITIVITY_X\n        dy = (ny - nose_origin_y) * screen_h * NOSE_SENSITIVITY_Y\n\n        target_x = np.clip(screen_w // 2 + dx, 0, screen_w)\n        target_y = np.clip(screen_h // 2 + dy, 0, screen_h)\n\n        smooth_x = smooth_x + (target_x - smooth_x) / SMOOTHING\n        smooth_y = smooth_y + (target_y - smooth_y) / SMOOTHING\n\n        now = time.time()\n\n        r_closed = r_ear < BLINK_THRESHOLD\n        l_closed = l_ear < BLINK_THRESHOLD\n        both     = r_closed and l_closed\n\n        # \u2500\u2500 Double blink \u2192 left click \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n        if both:\n            blink_times.append(now)\n            blink_times[:] = [t for t in blink_times if now - t < 1.5]\n            if len(blink_times) >= 2 and (now - blink_times[-2]) < DOUBLE_BLINK_GAP:\n                if now - last_click > CLICK_COOLDOWN:\n                    pyautogui.click()\n                    last_click = now\n                    blink_times.clear()\n                    status       = \"LEFT CLICK!\"\n                    status_color = (0, 255, 0)\n\n        # \u2500\u2500 Hold left eye \u2192 right click \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n        elif l_closed and not r_closed:\n            if left_eye_closed_since is None:\n                left_eye_closed_since = now\n            elif (now - left_eye_closed_since) > RIGHT_CLICK_HOLD:\n                if now - last_click > CLICK_COOLDOWN:\n                    pyautogui.click(button=\"right\")\n                    last_click            = now\n                    left_eye_closed_since = None\n                    status                = \"RIGHT CLICK!\"\n                    status_color          = (0, 100, 255)\n        else:\n            left_eye_closed_since = None\n\n        # \u2500\u2500 Move cursor \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n        if status not in (\"LEFT CLICK!\", \"RIGHT CLICK!\"):\n            pyautogui.moveTo(int(smooth_x), int(smooth_y))\n            status       = \"Tracking\"\n            status_color = (200, 200, 200)\n\n        # \u2500\u2500 EAR debug \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n        cv2.putText(frame, f\"R:{r_ear:.2f}  L:{l_ear:.2f}  threshold:{BLINK_THRESHOLD}\",\n                    (10, cam_h - 10),\n                    cv2.FONT_HERSHEY_SIMPLEX, 0.45, (150, 150, 150), 1)\n\n    # \u2500\u2500 HUD \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n    cv2.putText(frame, status, (10, 35),\n                cv2.FONT_HERSHEY_SIMPLEX, 0.9, status_color, 2)\n    cv2.putText(frame, \"R = recalibrate  |  Q = quit\",\n                (10, 65),\n                cv2.FONT_HERSHEY_SIMPLEX, 0.45, (150, 150, 150), 1)\n\n    cv2.imshow(\"Head & Eye Mouse\", frame)\n\n    key = cv2.waitKey(1) & 0xFF\n    if key == ord(\"q\"):\n        break\n    elif key == ord(\"r\"):\n        # Recalibrate\n        calibrated         = False\n        calibration_frames = []\n        blink_times        = []\n        print(\"Recalibrating...\")\n\ncap.release()\ncv2.destroyAllWindows()\nprint(\"Exited cleanly.\")\n"
+  },
+  hand: {
+    title: "Hand Gesture Mouse Controller",
+    meta: "hand_gesture_mouse.py  ·  Python  ·  MediaPipe",
+    code: "\"\"\"\nHand Gesture Mouse Controller\n==============================\nControls your mouse using hand gestures via webcam.\n\nRequirements:\n    pip install opencv-python mediapipe pyautogui numpy\n\nGestures:\n    - Move cursor     : Index finger tip position\n    - Left click      : Thumb + Index finger pinch\n    - Right click     : Index + Middle finger pinch\n    - Scroll          : Two fingers (index + middle) extended \u2014 move up/down\n\"\"\"\n\nimport cv2\nimport mediapipe as mp\nimport pyautogui\nimport numpy as np\nimport time\n\n# \u2500\u2500 Configuration \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nSMOOTHING         = 5          # higher = smoother but slower cursor\nPINCH_THRESHOLD   = 0.045      # normalised distance to trigger a click\nSCROLL_THRESHOLD  = 0.07       # distance between index & middle to enter scroll mode\nSCROLL_SPEED      = 20         # pixels to scroll per frame\nCLICK_COOLDOWN    = 0.4        # seconds between clicks\n\n# \u2500\u2500 Setup \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\npyautogui.FAILSAFE = False      # disable corner-kill so you can move freely\nscreen_w, screen_h = pyautogui.size()\n\nmp_hands    = mp.solutions.hands\nmp_drawing  = mp.solutions.drawing_utils\nhands_model = mp_hands.Hands(\n    max_num_hands=1,\n    min_detection_confidence=0.7,\n    min_tracking_confidence=0.7,\n)\n\ncap = cv2.VideoCapture(0)\ncam_w = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))\ncam_h = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))\n\n# Smoothing buffer\nprev_x, prev_y   = 0, 0\nsmooth_x, smooth_y = 0, 0\n\nlast_left_click  = 0\nlast_right_click = 0\nprev_scroll_y    = None\n\n\n# \u2500\u2500 Helpers \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\ndef dist(lm, a, b):\n    \"\"\"Euclidean distance between two landmarks (normalised coords).\"\"\"\n    ax, ay = lm[a].x, lm[a].y\n    bx, by = lm[b].x, lm[b].y\n    return np.hypot(ax - bx, ay - by)\n\n\ndef finger_up(lm, tip, pip):\n    \"\"\"True when a finger is extended (tip above pip).\"\"\"\n    return lm[tip].y < lm[pip].y\n\n\ndef draw_status(frame, text, color=(0, 255, 0)):\n    cv2.putText(frame, text, (10, 30),\n                cv2.FONT_HERSHEY_SIMPLEX, 0.9, color, 2)\n\n\n# \u2500\u2500 Main loop \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nprint(\"Hand Gesture Mouse Controller running. Press Q to quit.\")\n\nwhile True:\n    ret, frame = cap.read()\n    if not ret:\n        break\n\n    # Flip for mirror view\n    frame = cv2.flip(frame, 1)\n    rgb   = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)\n\n    result = hands_model.process(rgb)\n    status = \"No hand detected\"\n    status_color = (0, 0, 255)\n\n    if result.multi_hand_landmarks:\n        lm = result.multi_hand_landmarks[0].landmark\n\n        # Draw hand skeleton\n        mp_drawing.draw_landmarks(\n            frame,\n            result.multi_hand_landmarks[0],\n            mp_hands.HAND_CONNECTIONS,\n        )\n\n        # \u2500\u2500 Landmark indices (MediaPipe standard) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n        # 4  = thumb tip       3  = thumb IP\n        # 8  = index tip       6  = index PIP\n        # 12 = middle tip      10 = middle PIP\n        # 16 = ring tip        14 = ring PIP\n        # 20 = pinky tip       18 = pinky PIP\n\n        # \u2500\u2500 Cursor movement (index tip) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n        ix = int(lm[8].x * cam_w)\n        iy = int(lm[8].y * cam_h)\n\n        # Map camera coords \u2192 screen coords\n        target_x = int(np.interp(ix, [0, cam_w], [0, screen_w]))\n        target_y = int(np.interp(iy, [0, cam_h], [0, screen_h]))\n\n        # Exponential smoothing\n        smooth_x = prev_x + (target_x - prev_x) / SMOOTHING\n        smooth_y = prev_y + (target_y - prev_y) / SMOOTHING\n        prev_x, prev_y = smooth_x, smooth_y\n\n        # \u2500\u2500 Finger states \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n        index_up  = finger_up(lm, 8,  6)\n        middle_up = finger_up(lm, 12, 10)\n        ring_up   = finger_up(lm, 16, 14)\n        pinky_up  = finger_up(lm, 20, 18)\n\n        d_thumb_index  = dist(lm, 4, 8)    # left click\n        d_index_middle = dist(lm, 8, 12)   # right click / scroll detect\n\n        now = time.time()\n\n        # \u2500\u2500 Scroll mode: index + middle both up, close together \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n        if index_up and middle_up and d_index_middle < SCROLL_THRESHOLD:\n            mid_y = (lm[8].y + lm[12].y) / 2\n            if prev_scroll_y is not None:\n                delta = mid_y - prev_scroll_y\n                if abs(delta) > 0.002:\n                    pyautogui.scroll(int(-delta * SCROLL_SPEED * 100))\n            prev_scroll_y = mid_y\n            status = \"Scroll\"\n            status_color = (255, 165, 0)\n\n        # \u2500\u2500 Right click: index + middle pinch \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n        elif d_index_middle < PINCH_THRESHOLD and (now - last_right_click) > CLICK_COOLDOWN:\n            pyautogui.click(button=\"right\")\n            last_right_click = now\n            status = \"Right Click!\"\n            status_color = (0, 100, 255)\n            prev_scroll_y = None\n\n        # \u2500\u2500 Left click: thumb + index pinch \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n        elif d_thumb_index < PINCH_THRESHOLD and (now - last_left_click) > CLICK_COOLDOWN:\n            pyautogui.click()\n            last_left_click = now\n            status = \"Left Click!\"\n            status_color = (0, 255, 0)\n            prev_scroll_y = None\n\n        # \u2500\u2500 Normal cursor movement \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n        else:\n            pyautogui.moveTo(int(smooth_x), int(smooth_y))\n            status = \"Moving cursor\"\n            status_color = (255, 255, 255)\n            prev_scroll_y = None\n\n        # Visual feedback: draw index fingertip circle\n        cv2.circle(frame, (ix, iy), 12, (0, 255, 255), -1)\n\n    # \u2500\u2500 HUD \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n    draw_status(frame, status, status_color)\n    cv2.putText(frame, \"Q = quit\", (cam_w - 110, 30),\n                cv2.FONT_HERSHEY_SIMPLEX, 0.7, (200, 200, 200), 1)\n\n    cv2.imshow(\"Hand Gesture Mouse Controller\", frame)\n\n    if cv2.waitKey(1) & 0xFF == ord(\"q\"):\n        break\n\ncap.release()\ncv2.destroyAllWindows()\nprint(\"Exited cleanly.\")\n"
+  },
+  emotion: {
+    title: "Real-Time Emotion + Age + Gender Detector",
+    meta: "emotion_detector.py  ·  Python  ·  DeepFace · OpenCV",
+    code: "\"\"\"\nReal-Time Emotion + Age + Gender Detector\n==========================================\nDetects emotions, age and gender from your webcam in real time using DeepFace + OpenCV.\n\nRequirements:\n    pip install deepface opencv-python numpy tf-keras\n\nFeatures:\n    - Live webcam feed\n    - Face bounding box\n    - Stable emotion label + emoji (averaged over last N frames)\n    - Confidence percentage bars\n    - Age prediction\n    - Gender prediction\n\"\"\"\n\nimport cv2\nimport numpy as np\nfrom deepface import DeepFace\nfrom collections import Counter\n\n# \u2500\u2500 Emoji map \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nEMOJI = {\n    \"happy\":    \"\ud83d\ude0a\",\n    \"sad\":      \"\ud83d\ude22\",\n    \"angry\":    \"\ud83d\ude20\",\n    \"surprise\": \"\ud83d\ude32\",\n    \"fear\":     \"\ud83d\ude28\",\n    \"disgust\":  \"\ud83e\udd22\",\n    \"neutral\":  \"\ud83d\ude10\",\n}\n\n# \u2500\u2500 Colors per emotion (BGR) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nCOLORS = {\n    \"happy\":    (0, 215, 255),\n    \"sad\":      (255, 100, 100),\n    \"angry\":    (0, 0, 255),\n    \"surprise\": (0, 165, 255),\n    \"fear\":     (128, 0, 128),\n    \"disgust\":  (0, 128, 0),\n    \"neutral\":  (200, 200, 200),\n}\nDEFAULT_COLOR = (255, 255, 255)\n\n# \u2500\u2500 Stability buffer \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nSTABILITY_BUFFER_SIZE = 20   # increased from 10 \u2014 more frames = more stable\nemotion_buffer = []\nsmoothed_emotions = {}\nSMOOTH_FACTOR = 0.15         # reduced from 0.3 \u2014 slower to react = less flicker\n\n# \u2500\u2500 Age correction \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nAGE_CORRECTION_FACTOR = 0.85\n\n# \u2500\u2500 Emotion bias correction \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nEMOTION_BIAS = {\n    \"angry\":    22.0,\n    \"fear\":    -35.0,\n    \"happy\":    18.0,\n    \"sad\":      -8.0,\n    \"surprise\": 20.0,\n    \"disgust\":   5.0,\n    \"neutral\":  -20.0,  # suppress neutral so real emotions can shine through\n}\n\n# Minimum confidence threshold \u2014 emotion must beat this to be shown as dominant\nEMOTION_MIN_THRESHOLD = {\n    \"fear\":     30.0,   # lowered \u2014 but still needs decent confidence\n    \"sad\":      18.0,\n    \"angry\":    15.0,\n    \"happy\":    12.0,\n    \"surprise\": 15.0,\n    \"disgust\":  20.0,\n    \"neutral\":   0.0,   # neutral has no threshold \u2014 but bias keeps it in check\n}\n\n# Cap how much neutral can dominate\nNEUTRAL_CAP = 45.0   # neutral score is capped at this percentage\n\n\ndef apply_bias(emotions: dict) -> dict:\n    \"\"\"Apply bias corrections and re-normalize so scores still add up to 100.\"\"\"\n    corrected = {}\n    for emo, val in emotions.items():\n        bias = EMOTION_BIAS.get(emo.lower(), 0.0)\n        corrected[emo] = max(0.0, val + bias)\n\n    # Re-normalize to 100\n    total = sum(corrected.values())\n    if total > 0:\n        corrected = {e: (v / total) * 100 for e, v in corrected.items()}\n\n    # Apply minimum threshold \u2014 if emotion does not meet threshold, zero it out\n    # but do NOT push to neutral \u2014 just remove it so other emotions compete\n    for emo in list(corrected.keys()):\n        if emo.lower() == \"neutral\":\n            continue\n        threshold = EMOTION_MIN_THRESHOLD.get(emo.lower(), 0.0)\n        if corrected[emo] < threshold:\n            corrected[emo] = 0.0\n\n    # Cap neutral so it does not dominate\n    if corrected.get(\"neutral\", 0.0) > NEUTRAL_CAP:\n        corrected[\"neutral\"] = NEUTRAL_CAP\n\n    # Re-normalize again\n    total = sum(corrected.values())\n    if total > 0:\n        corrected = {e: (v / total) * 100 for e, v in corrected.items()}\n    return corrected\n\n\ndef get_stable_emotion(new_emotion):\n    \"\"\"Return the most common emotion from the last N detections.\"\"\"\n    emotion_buffer.append(new_emotion)\n    if len(emotion_buffer) > STABILITY_BUFFER_SIZE:\n        emotion_buffer.pop(0)\n    counts = Counter(emotion_buffer)\n    return counts.most_common(1)[0][0]\n\n\ndef smooth_confidences(new_emotions: dict) -> dict:\n    \"\"\"Exponential moving average of confidence scores to reduce flickering.\"\"\"\n    global smoothed_emotions\n    if not smoothed_emotions:\n        smoothed_emotions = new_emotions.copy()\n    else:\n        for emo, val in new_emotions.items():\n            prev = smoothed_emotions.get(emo, val)\n            smoothed_emotions[emo] = prev + SMOOTH_FACTOR * (val - prev)\n    return smoothed_emotions\n\n\ndef draw_side_panel(frame, emotions, dominant, age, gender, gender_conf):\n    \"\"\"Draw a fixed side panel on the right with all emotion bars + info.\"\"\"\n    frame_h, frame_w = frame.shape[:2]\n    panel_w = 220\n    panel_x = frame_w - panel_w - 10\n    panel_y = 10\n\n    # Semi-transparent background\n    overlay = frame.copy()\n    cv2.rectangle(overlay, (panel_x - 8, panel_y), (frame_w - 5, frame_h - 10), (20, 20, 20), -1)\n    cv2.addWeighted(overlay, 0.6, frame, 0.4, 0, frame)\n\n    # Title\n    cv2.putText(frame, \"ANALYSIS\", (panel_x, panel_y + 20),\n                cv2.FONT_HERSHEY_SIMPLEX, 0.6, (200, 200, 200), 1)\n    cv2.line(frame, (panel_x - 8, panel_y + 28), (frame_w - 5, panel_y + 28), (80, 80, 80), 1)\n\n    # Age & Gender\n    gender_emoji = \"M\" if gender.lower() == \"man\" else \"F\"\n    cv2.putText(frame, f\"[{gender_emoji}] {gender} ({gender_conf:.0f}%)\",\n                (panel_x, panel_y + 50),\n                cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)\n    cv2.putText(frame, f\"Age: ~{int(age)}\",\n                (panel_x, panel_y + 72),\n                cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)\n\n    cv2.line(frame, (panel_x - 8, panel_y + 82), (frame_w - 5, panel_y + 82), (80, 80, 80), 1)\n\n    # Emotion bars\n    sorted_emotions = sorted(emotions.items(), key=lambda e: e[1], reverse=True)\n    bar_max_w = panel_w - 10\n\n    for i, (emo, conf) in enumerate(sorted_emotions):\n        bar_color = COLORS.get(emo.lower(), (200, 200, 200))\n        is_dominant = emo.lower() == dominant.lower()\n\n        ey = panel_y + 100 + i * 38\n        label = f\"{emo.capitalize()}\"\n        pct   = f\"{conf:.1f}%\"\n\n        # Highlight dominant emotion\n        if is_dominant:\n            cv2.rectangle(frame, (panel_x - 8, ey - 14), (frame_w - 5, ey + 22), (40, 40, 40), -1)\n\n        # Emotion name\n        cv2.putText(frame, label, (panel_x, ey),\n                    cv2.FONT_HERSHEY_SIMPLEX, 0.45,\n                    bar_color if is_dominant else (180, 180, 180), 1)\n\n        # Bar background\n        cv2.rectangle(frame, (panel_x, ey + 4), (panel_x + bar_max_w, ey + 16), (60, 60, 60), -1)\n\n        # Bar fill\n        fill_w = int((conf / 100) * bar_max_w)\n        cv2.rectangle(frame, (panel_x, ey + 4), (panel_x + fill_w, ey + 16), bar_color, -1)\n\n        # Percentage text\n        cv2.putText(frame, pct, (panel_x + fill_w + 4, ey + 15),\n                    cv2.FONT_HERSHEY_SIMPLEX, 0.38, (255, 255, 255), 1)\n\n\ndef draw_rounded_rect(frame, x1, y1, x2, y2, color, thickness=2, r=15):\n    cv2.line(frame, (x1 + r, y1), (x2 - r, y1), color, thickness)\n    cv2.line(frame, (x1 + r, y2), (x2 - r, y2), color, thickness)\n    cv2.line(frame, (x1, y1 + r), (x1, y2 - r), color, thickness)\n    cv2.line(frame, (x2, y1 + r), (x2, y2 - r), color, thickness)\n    cv2.ellipse(frame, (x1 + r, y1 + r), (r, r), 180, 0, 90, color, thickness)\n    cv2.ellipse(frame, (x2 - r, y1 + r), (r, r), 270, 0, 90, color, thickness)\n    cv2.ellipse(frame, (x1 + r, y2 - r), (r, r), 90,  0, 90, color, thickness)\n    cv2.ellipse(frame, (x2 - r, y2 - r), (r, r), 0,   0, 90, color, thickness)\n\n\n# \u2500\u2500 Main \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\ncap = cv2.VideoCapture(0)\nprint(\"Emotion + Age + Gender Detector running! Press Q to quit.\")\nprint(\"Note: First detection may take a few seconds to load the AI models...\")\n\nANALYZE_EVERY = 8\nframe_count   = 0\nlast_results  = []\n\nwhile True:\n    ret, frame = cap.read()\n    if not ret:\n        break\n\n    frame   = cv2.flip(frame, 1)\n    display = frame.copy()\n    frame_count += 1\n\n    # \u2500\u2500 Analyze every N frames \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n    if frame_count % ANALYZE_EVERY == 0:\n        try:\n            results = DeepFace.analyze(\n                frame,\n                actions=[\"emotion\", \"age\", \"gender\"],\n                enforce_detection=False,\n                detector_backend=\"opencv\",\n                silent=True,\n            )\n            last_results = results if isinstance(results, list) else [results]\n        except Exception:\n            last_results = []\n\n    # \u2500\u2500 Draw results \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n    for face in last_results:\n        raw_emotions = face.get(\"emotion\", {})\n        dominant_raw = face.get(\"dominant_emotion\", \"neutral\").lower()\n        age          = face.get(\"age\", 0)\n        gender_data  = face.get(\"gender\", {})\n        region       = face.get(\"region\", {})\n\n        x = region.get(\"x\", 0)\n        y = region.get(\"y\", 0)\n        w = region.get(\"w\", 0)\n        h = region.get(\"h\", 0)\n\n        # \u2500\u2500 Apply bias correction then stabilize \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n        corrected_emotions = apply_bias(raw_emotions)\n        dominant_corrected = max(corrected_emotions, key=corrected_emotions.get).lower()\n        dominant = get_stable_emotion(dominant_corrected)\n        smoothed = smooth_confidences(corrected_emotions)\n\n        # \u2500\u2500 Correct age \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n        age = int(age * AGE_CORRECTION_FACTOR)\n\n        color = COLORS.get(dominant, DEFAULT_COLOR)\n        emoji = EMOJI.get(dominant, \"?\")\n\n        # \u2500\u2500 Gender \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n        if isinstance(gender_data, dict):\n            gender      = max(gender_data, key=gender_data.get)\n            gender_conf = gender_data[gender]\n        else:\n            gender      = str(gender_data)\n            gender_conf = 100.0\n\n        # \u2500\u2500 Face bounding box \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n        if w > 0 and h > 0:\n            draw_rounded_rect(display, x, y, x + w, y + h, color, thickness=2)\n\n        # \u2500\u2500 Emotion label on face box \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n        if w > 0 and h > 0:\n            label_text = f\"{dominant.upper()}\"\n            (tw, th), _ = cv2.getTextSize(label_text, cv2.FONT_HERSHEY_SIMPLEX, 0.8, 2)\n            cv2.rectangle(display,\n                          (x, y + h + 5),\n                          (x + tw + 20, y + h + th + 18),\n                          color, -1)\n            cv2.putText(display, label_text,\n                        (x + 10, y + h + th + 10),\n                        cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 0), 2)\n\n        # \u2500\u2500 Side panel with all info \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n        draw_side_panel(display, smoothed, dominant, age, gender, gender_conf)\n\n    # \u2500\u2500 HUD \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n    cv2.putText(display, \"Press Q to quit\",\n                (10, display.shape[0] - 10),\n                cv2.FONT_HERSHEY_SIMPLEX, 0.5, (150, 150, 150), 1)\n\n    cv2.imshow(\"Emotion + Age + Gender Detector\", display)\n\n    if cv2.waitKey(1) & 0xFF == ord(\"q\"):\n        break\n\ncap.release()\ncv2.destroyAllWindows()\nprint(\"Exited cleanly.\")\n"
+  }
+};
+
+// ── Simple syntax highlight ──
+function highlight(code) {
+  const esc = code.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  return esc
+    .replace(/(#[^\n]*)/g, '<span class="cm">$1</span>')
+    .replace(/(&quot;&quot;&quot;[\s\S]*?&quot;&quot;&quot;)/g, '<span class="cm">$1</span>')
+    .replace(/\b(import|from|def|class|return|if|elif|else|for|while|in|not|and|or|True|False|None|global|break|continue|try|except|with|as|pass|lambda|yield)\b/g,'<span class="kw">$1</span>')
+    .replace(/\b([A-Z][a-zA-Z_]*)\b(?=\s*[.(])/g,'<span class="fn">$1</span>')
+    .replace(/\b([a-z_][a-zA-Z_0-9]*)(?=\s*\()/g,'<span class="fn">$1</span>')
+    .replace(/(&quot;[^&]*?&quot;|&#39;[^&#]*?&#39;)/g,'<span class="st">$1</span>')
+    .replace(/\b(\d+\.?\d*)\b/g,'<span class="nm">$1</span>');
+}
+
+function openModal(key) {
+  const d = CODE_DATA[key];
+  document.getElementById('modalTitle').textContent = d.title;
+  document.getElementById('modalMeta').textContent = d.meta;
+  document.getElementById('codeContent').innerHTML = highlight(d.code);
+  document.getElementById('copyBtn').textContent = 'Copy Code';
+  document.getElementById('copyBtn').classList.remove('copied');
+  document.getElementById('codeModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('codeModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function handleOverlayClick(e) {
+  if(e.target === document.getElementById('codeModal')) closeModal();
+}
+
+function copyCode() {
+  const key = Object.keys(CODE_DATA).find(k =>
+    CODE_DATA[k].title === document.getElementById('modalTitle').textContent
+  );
+  if(!key) return;
+  navigator.clipboard.writeText(CODE_DATA[key].code).then(()=>{
+    const btn = document.getElementById('copyBtn');
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='Copy Code';btn.classList.remove('copied');},2000);
+  });
+}
+
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
 </script>
 </body>
 </html>
