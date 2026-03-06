@@ -1,521 +1,643 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="description" content="Urmi">
-<meta name="keywords" content="">
-<meta name="author" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="icon" href="_/img/favicon.png" sizes="16x16">
-  <title>Silvy Rahman Urmi | Portfolio</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Silvy Rahman Urmi — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg: #07070d;
+  --surface: #0e0e18;
+  --card: #13131e;
+  --border: rgba(255,255,255,0.07);
+  --accent: #d4a96a;
+  --accent2: #6ab4d4;
+  --accent3: #d46aaa;
+  --text: #ece8e0;
+  --muted: #6e6e82;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'DM Mono',monospace;
+  font-size:14px;
+  line-height:1.75;
+  overflow-x:hidden;
+  cursor:none;
+}
+#cur{position:fixed;width:10px;height:10px;background:var(--accent);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen;}
+#cur-ring{position:fixed;width:38px;height:38px;border:1px solid rgba(212,169,106,.5);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .14s ease;}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.028;pointer-events:none;z-index:9990;}
 
-  <!-- resources CSS link start -->
-  <link rel="stylesheet" href="resources/css/style.css">
-  <link rel="stylesheet" href="resources/css/responsive.css">
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:22px 60px;background:linear-gradient(to bottom,rgba(7,7,13,.96) 60%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid transparent;transition:border-color .4s;}
+nav.scrolled{border-bottom-color:var(--border);}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;letter-spacing:.12em;color:var(--accent);text-decoration:none;display:flex;align-items:center;gap:10px;}
+.nav-dot{width:6px;height:6px;background:var(--accent);border-radius:50%;display:inline-block;animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.7);}}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:11px;letter-spacing:.16em;text-transform:uppercase;transition:color .3s;position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--accent);transition:width .3s;}
+.nav-links a:hover{color:var(--accent);}
+.nav-links a:hover::after{width:100%;}
 
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;padding:140px 60px 100px;position:relative;overflow:hidden;}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(212,169,106,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(212,169,106,.04) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 80% 75% at 60% 40%,black 30%,transparent 100%);}
+.orb{position:absolute;border-radius:50%;pointer-events:none;filter:blur(110px);}
+.orb1{width:700px;height:700px;background:radial-gradient(circle,rgba(212,169,106,.14),transparent 70%);top:-200px;right:-150px;animation:drift 10s ease-in-out infinite;}
+.orb2{width:450px;height:450px;background:radial-gradient(circle,rgba(106,180,212,.1),transparent 70%);bottom:-100px;left:-100px;animation:drift 13s ease-in-out infinite reverse;}
+.orb3{width:320px;height:320px;background:radial-gradient(circle,rgba(212,106,170,.08),transparent 70%);top:40%;left:35%;animation:drift 8s ease-in-out infinite 3s;}
+@keyframes drift{0%,100%{transform:translate(0,0);}33%{transform:translate(30px,-40px);}66%{transform:translate(-20px,25px);}}
 
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 340px;gap:80px;align-items:center;max-width:1200px;width:100%;margin:0 auto;}
+.chip{display:inline-flex;align-items:center;gap:10px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:22px;opacity:0;animation:riseUp .8s .1s forwards;}
+.chip::before{content:'';width:32px;height:1px;background:var(--accent);}
+h1{font-family:'Syne',sans-serif;font-size:clamp(50px,7.5vw,86px);font-weight:800;line-height:.95;letter-spacing:-.025em;margin-bottom:10px;opacity:0;animation:riseUp .8s .3s forwards;}
+.name-italic{display:block;font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(58px,8.5vw,96px);color:transparent;-webkit-text-stroke:1px var(--accent);letter-spacing:-.01em;}
+.hero-role{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;font-style:italic;color:var(--muted);margin-bottom:28px;opacity:0;animation:riseUp .8s .5s forwards;}
+.hero-desc{color:var(--muted);font-size:13px;line-height:2;max-width:500px;margin-bottom:44px;opacity:0;animation:riseUp .8s .7s forwards;}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:riseUp .8s .9s forwards;}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:14px 30px;text-decoration:none;transition:all .3s;}
+.btn-gold{background:var(--accent);color:#07070d;font-weight:500;}
+.btn-gold:hover{box-shadow:0 16px 48px rgba(212,169,106,.35);transform:translateY(-2px);}
+.btn-ghost{border:1px solid var(--border);color:var(--muted);}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);}
 
-    <!-- resources CSS link end -->
+/* Hero right */
+.hero-right{opacity:0;animation:fadeIn 1.2s .4s forwards;}
+.hero-card{background:var(--card);border:1px solid var(--border);padding:32px;position:relative;}
+.hero-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent3));}
+.hc-avatar{width:80px;height:80px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:32px;color:#07070d;font-weight:600;margin-bottom:20px;}
+.hc-name{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:4px;}
+.hc-title{font-size:11px;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px;}
+.hc-row{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;font-size:12px;color:var(--muted);}
+.hc-icon{color:var(--accent);font-size:14px;flex-shrink:0;margin-top:1px;}
+.hc-divider{height:1px;background:var(--border);margin:20px 0;}
+.skills-wrap{display:flex;flex-wrap:wrap;gap:8px;}
+.skill-tag{padding:5px 12px;border:1px solid var(--border);font-size:10px;letter-spacing:.08em;color:var(--muted);transition:all .3s;}
+.skill-tag:hover{border-color:var(--accent);color:var(--accent);}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:1px;}
+.stat{background:var(--card);padding:16px 10px;text-align:center;}
+.stat-n{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:9px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:2px;}
 
-    <!-- vendors CSS link start -->
+@keyframes riseUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 
-    <link rel="stylesheet" href="vendors/css/responsive_grid_system.css">
-    <link rel="stylesheet" href="vendors/css/normalize.css">
-        <link rel="stylesheet" href="vendors/css/normalize.css">
-        <link rel="stylesheet" href="vendors/css/bootstrap.min.css">
-        <link rel="stylesheet" href="vendors/css/font-awesome.min.css">
-        <link rel="stylesheet" href="vendors/fontAwesome/css/all.min.css">
-        <link rel="stylesheet" href="vendors/css/animate.min.css">
+/* SECTIONS */
+.section{padding:120px 60px;max-width:1200px;margin:0 auto;}
+.section-full{padding:120px 0;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.section-inner{max-width:1200px;margin:0 auto;padding:0 60px;}
+.sec-eyebrow{display:flex;align-items:center;gap:14px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;}
+.sec-eyebrow::before{content:'';width:32px;height:1px;background:var(--accent);}
+.sec-title{font-family:'Syne',sans-serif;font-size:clamp(36px,5vw,54px);font-weight:800;line-height:1;letter-spacing:-.02em;margin-bottom:60px;}
+.sec-title em{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;color:var(--accent);}
 
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.about-text p{color:var(--muted);font-size:14px;line-height:2;margin-bottom:20px;}
+.about-text p strong{color:var(--text);}
+.about-highlights{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-top:40px;}
+.ah-item{background:var(--bg);padding:24px;border-left:2px solid transparent;transition:border-color .3s;}
+.ah-item:hover{border-left-color:var(--accent);}
+.ah-item h4{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;color:var(--accent);margin-bottom:6px;text-transform:uppercase;letter-spacing:.08em;}
+.ah-item p{font-size:12px;color:var(--muted);}
+.lang-list{display:flex;flex-direction:column;gap:16px;margin-top:32px;}
+.lang-item{display:flex;align-items:center;gap:16px;}
+.lang-name{width:80px;font-size:12px;color:var(--text);}
+.lang-level{font-size:11px;color:var(--muted);width:60px;}
+.lang-bar{flex:1;height:2px;background:var(--border);}
+.lang-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));}
 
+/* EXPERIENCE */
+.timeline{position:relative;padding-left:32px;}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--border);}
+.tl-item{position:relative;margin-bottom:56px;opacity:0;transform:translateX(-16px);transition:opacity .6s,transform .6s;}
+.tl-item.visible{opacity:1;transform:translateX(0);}
+.tl-dot{position:absolute;left:-40px;top:4px;width:16px;height:16px;border-radius:50%;border:2px solid var(--accent);background:var(--bg);display:flex;align-items:center;justify-content:center;}
+.tl-dot::after{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;}
+.tl-period{font-size:10px;color:var(--accent);letter-spacing:.15em;text-transform:uppercase;margin-bottom:8px;}
+.tl-role{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:4px;}
+.tl-company{font-size:12px;color:var(--muted);margin-bottom:16px;}
+.tl-bullets{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.tl-bullets li{font-size:12px;color:var(--muted);display:flex;gap:12px;line-height:1.7;}
+.tl-bullets li::before{content:'›';color:var(--accent);flex-shrink:0;}
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);}
+.proj-card{background:var(--card);padding:36px 30px;position:relative;overflow:hidden;opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s,background .3s;}
+.proj-card.visible{opacity:1;transform:translateY(0);}
+.proj-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);transform:scaleX(0);transition:transform .4s;}
+.proj-card:hover::before{transform:scaleX(1);}
+.proj-card:hover{background:#1a1a28;}
+.proj-num{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:var(--border);position:absolute;top:16px;right:20px;line-height:1;transition:color .3s;}
+.proj-card:hover .proj-num{color:rgba(212,169,106,.12);}
+.proj-icon{font-size:28px;margin-bottom:20px;}
+.proj-name{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:10px;}
+.proj-desc{font-size:12px;color:var(--muted);line-height:1.85;margin-bottom:20px;}
+.proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px;}
+.proj-tag{font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;background:rgba(212,169,106,.08);color:var(--accent);border:1px solid rgba(212,169,106,.15);}
+.proj-links{display:flex;gap:12px;}
+.proj-link{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color .3s;}
+.proj-link:hover{color:var(--accent);}
+.proj-link svg{width:12px;height:12px;}
+.proj-featured{grid-column:span 2;background:linear-gradient(135deg,#13131e 0%,#0f1520 100%);border:1px solid rgba(106,180,212,.15);}
+.proj-featured::before{background:linear-gradient(90deg,transparent,var(--accent2),transparent);}
+.proj-featured:hover{background:linear-gradient(135deg,#16162a 0%,#111a28 100%);}
 
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+/* RESEARCH */
+.research-list{display:flex;flex-direction:column;gap:1px;background:var(--border);}
+.res-item{background:var(--card);padding:36px 40px;display:grid;grid-template-columns:80px 1fr auto;gap:32px;align-items:center;transition:background .3s;opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s,background .3s;}
+.res-item.visible{opacity:1;transform:translateY(0);}
+.res-item:hover{background:#1a1a28;}
+.res-year{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;color:rgba(255,255,255,.08);}
+.res-content h3{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:8px;line-height:1.4;}
+.res-content p{font-size:12px;color:var(--muted);line-height:1.8;}
+.res-journal{font-size:10px;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-top:8px;}
+.res-link{display:flex;align-items:center;gap:8px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:10px 18px;transition:all .3s;white-space:nowrap;}
+.res-link:hover{border-color:var(--accent);color:var(--accent);}
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+/* SKILLS */
+.skills-section-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);}
+.skill-group{background:var(--card);padding:32px 28px;}
+.skill-group h3{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:20px;}
+.skill-items{display:flex;flex-direction:column;gap:10px;}
+.sk-item{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:10px;}
+.sk-item::before{content:'';width:4px;height:4px;background:var(--accent);border-radius:50%;flex-shrink:0;}
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&family=Raleway:wght@200&display=swap" rel="stylesheet">
+/* CONTACT */
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.contact-left h2{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,6vw,72px);font-weight:300;font-style:italic;line-height:1.1;margin-bottom:24px;}
+.contact-left h2 strong{font-family:'Syne',sans-serif;font-style:normal;font-weight:800;font-size:clamp(38px,4.5vw,56px);display:block;}
+.contact-left p{color:var(--muted);font-size:13px;line-height:2;margin-bottom:40px;}
+.contact-links{display:flex;flex-direction:column;gap:1px;background:var(--border);}
+.contact-link-item{background:var(--card);padding:20px 24px;display:flex;align-items:center;gap:18px;text-decoration:none;transition:background .3s;}
+.contact-link-item:hover{background:#1a1a28;}
+.cli-icon{font-size:20px;flex-shrink:0;}
+.cli-label{font-size:9px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;margin-bottom:2px;}
+.cli-value{font-size:13px;color:var(--text);}
 
-      <!-- vendors CSS link end -->
+/* FOOTER */
+footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
+.foot-name{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:300;color:var(--accent);}
+.foot-copy{font-size:11px;color:var(--muted);}
 
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s;}
+.reveal.visible{opacity:1;transform:translateY(0);}
 
-
-
-<script src="vendors/js/jquery-3.5.1.min.js"></script>
-<script src="vendors/js/polygonizr.min.js"></script>
-<script src="vendors/js/mixitup.min.js"></script>
-<script src="resources/js/script.js"></script>
-<script src="resources/js/bootstrap.min.js"></script>
-
-
-<script async src="vendors/js/typer.js"></script>
-<script async src="vendors/js/wow.js"></script>
-
-
-<script>
-new WOW().init();
-</script>
-
-
-
-
-
-
+/* RESPONSIVE */
+@media(max-width:1000px){
+  .hero-inner,.about-grid,.contact-wrap{grid-template-columns:1fr;}
+  .hero-right{display:none;}
+  .projects-grid{grid-template-columns:1fr;}
+  .proj-featured{grid-column:span 1;}
+  .skills-section-grid{grid-template-columns:repeat(2,1fr);}
+  .res-item{grid-template-columns:1fr;gap:16px;}
+  .res-year{font-size:24px;}
+  nav{padding:18px 24px;}
+  .section{padding:80px 24px;}
+  .section-inner{padding:0 24px;}
+  footer{flex-direction:column;gap:12px;text-align:center;}
+}
+@media(max-width:640px){
+  nav{padding:16px 20px;}
+  .nav-links{gap:16px;}
+  .skills-section-grid{grid-template-columns:1fr;}
+  #hero{padding:120px 20px 80px;}
+}
+</style>
 </head>
 <body>
 
+<div id="cur"></div>
+<div id="cur-ring"></div>
 
-
-  <!-- =================-head start============== -->
-
-<div class="headclass">
-
-<section class="headstart">
-  <!-- Navbar -->
-  <!-- Navbar -->
-  <nav style="z-index: 100000;">
-       <div class="menu-icon">
-          <i class="fa fa-bars fa-2x"></i>
-       </div>
-       <div class="logo log">
-          <a href="https://silvyurmi96.github.io/"><span>S</span>ilvy Rahman</a>
-       </div>
-       <div class="menu">
-          <ul class="log example">
-
-             <li class="hover hover-1"><a href="#"><span>H</span>ome</a></li>
-             <li class="hover hover-2"><a href="#aboutMe"><span>A</span>bout</a></li>
-
-             <li class="hover hover-4"><a href="#projectsection"><span>P</span>roject</a></li>
-            <li class="hover hover-3"><a href="#gameanime"><span>R</span>esearch</a></li>
-            <li class="hover hover-1"><a href="#contact"><span>C</span>ontact</a></li>
-
-          </ul>
-       </div>
-    </nav>
-
-    <!-- Navbar -->
-
-
-
-  <div class="container head-container">
-    <p class="animate__wobble">Hi, I am</p>
-
-    <h1 class="animate__wobble ">Silvy Rahman Urmi</h1>
-    </div>
-
-
-
-    <div class="jquery-script-ads animate__bounceOut ">
-       A FullStack
-  <span class="typer" id="typerWords" data-words="Android Developer., Web Designer.,Web Developer." data-delay="100" data-deletedelay="1000" style="color: white;"> Designer.</span>
-<span class="cursor" data-owner="typerWords" style="transition: all 0.1s ease 0s; opacity: 1;">_</span>
-
-
-  </div>
-
-<div class="bt animate__animated animate__bounce">
-  <a href="#projectsection" class=" border border-light rounded animate__rubberBand"
->
-    <i class="fa fa-folder-open-o"></i> View My Works
+<!-- NAV -->
+<nav id="navbar">
+  <a class="nav-logo" href="#">
+    <span class="nav-dot"></span> Silvy Rahman Urmi
   </a>
-</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-
-
-
-</section>
-
-</div>
-    <div id="site-landing">
-
-
-    </div>
-    <script>
-$('#site-landing').polygonizr();
-    </script>
-
-
-
-  <!-- =================-head end ============== -->
-
-
-  <!-- =================-about start ============== -->
-<section class=".aboutsection" id="aboutMe">
-
-<div class="aboutRow">
-
-
-<div class="aboutmedeviedOne">
-
-  <div class="box-box">
-    <div class="title">
-      <h3 class="animate__bounceOut">About Me </h3>
-    </div>
-  </div>
-
-
-</div>
-
-<div class="aboutsub">
-  <div class="aboutmedeviedtwo ">
-
-    <div class=" aboud_me ">
-                    <h3 class="animate__animated animate__bounce">Hi, I'm Silvy Rahman Urmi</h3>
-
-                    <div class="about-me-text text">
-                        I'm a Full Stack Web Developer & Designer based in Bangladesh, I'm very passionate and
-                        dedicated towards my work.<br><br>I have completed many projects using different technologies and
-                        i have
-                        acquired the skills necessary to build great and premium web-apps or websites.
-                    </div>
-
-                </div>
-
-
-  </div>
-  <div class="aboutmedeviedthree">
-    <div class="aboutcard  aos-init aos-animate" data-aos="fade-up">
-                  <div class="box">
-                      <ul class="text">
-                          <li>
-                            <i class="fa fa-id-card-o icon-rounded" aria-hidden="true"></i>
-                          Silvy Rahman Urmi
-                          </li>
-                          <li onclick="redirect('https://silvyurmi96.github.io/')">
-                            <i class="fa fa-github icon-rounded"></i>silvyraahman
-                          </li>
-                          <li>
-                            <i class="fa fa-internet-explorer icon-rounded" aria-hidden="true"></i>
-   https://silvyurmi96.github.io/
-                          </li>
-                          <li onclick="redirect('#contact')">
-                            <i class="fa fa-envelope-o icon-rounded" aria-hidden="true"></i>
-silvyrahman96@gmail.com
-                          </li>
-                      </ul>
-                      <div class="social-media">
-
-                        <a href="#contact">
-                          <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-                        </a>
-
-                        <a href="" class="">
-                          <i class="fa fa-github"></i>
-                        </a>
-
-
-                                  <a href="" class="">
-                                    <i class="fa fa-linkedin"></i>
-                                  </a>
-
-                          <a href="" class="">
-                            <i class="fab fa-slideshare"></i>
-
-                          </a>
-
-                        <a href="" class="">
-                          <i class="fa fa-instagram"></i>
-                        </a>
-
-
-
-                      </div>
-                  </div>
-              </div>
-
-  </div>
-</div>
-
-</div>
-
-
-
-</section>
-
-  <!-- =================-about end ============== -->
-
-
-
-<!-- =================-project start ============== -->
-<section class="projectSection" id="projectsection">
-  <div class="container">
-    <h2 class="animate__animated animate__bounce">PROJECTS</h2>
-
-    <div class="row cardfilter">
-      <div class="span_1_of_3 mix web ">
-
-        <div class="card">
-
-              <div class="card-body">
-
-                <h5 class="card-title">My Portfolio
-                </h5>
-              <p class="card-text">MY Website.</p>
-
-        <div class="card-body">
-<a href="https://silvyurmi96.github.io/" class="card-link btn btn-primary">Project Link</a>
-<a href="https://github.com/silvyurmi96/silvyurmi96.github.io" class="card-link btn btn-primary">View Code</a>
-</div>
-              </div>
-            </div>
-
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="chip">Available for opportunities</div>
+      <h1>Silvy<span class="name-italic">Rahman Urmi</span></h1>
+      <p class="hero-role">Fullstack Developer &amp; Web Engineer</p>
+      <p class="hero-desc">
+        Master's student in Web Engineering at TU Chemnitz. I build intelligent, 
+        human-centred applications — from computer vision tools to full-stack web platforms. 
+        Passionate about the intersection of AI and accessible technology.
+      </p>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn btn-gold">View Projects ↓</a>
+        <a href="#contact" class="btn btn-ghost">Get in Touch →</a>
+        <a href="https://github.com/silvyurmi96" target="_blank" class="btn btn-ghost">GitHub ↗</a>
       </div>
-
-
-      <div class="span_1_of_3 mix web">
-
-        <div class="card">
-
-              <div class="card-body">
-
-                <h5 class="card-title">Coaching Center System</h5>
-              <p class="card-text">HTML5,CSS3,JS,PHP</p>
-
-        <div class="card-body">
-<a href="https://github.com/silvyurmi96/327-project" class="card-link btn btn-primary">Project Link</a>
-<a href="https://github.com/silvyurmi96/327-project" class="card-link btn btn-primary">View Code</a>
-</div>
-              </div>
-            </div>
-
-      </div>
-<!--
-
-      <div class="span_1_of_3 mix web">
-
-        <div class="card">
-           <img class="card-img-top" src="..." alt="Card image cap">
-              <div class="card-body">
-
-                <h5 class="card-title">title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make
-
-        up the bulk of the card's content.</p>
-
-        <div class="card-body">
-<a href="#" class="card-link btn btn-primary">Card link</a>
-<a href="#" class="card-link btn btn-primary">Another link</a>
-</div>
-              </div>
-            </div>
-
-      </div>
--->
-
-
-
-
-
     </div>
-
-
+    <div class="hero-right">
+      <div class="hero-card">
+        <div class="hc-avatar">S</div>
+        <div class="hc-name">Silvy Rahman Urmi</div>
+        <div class="hc-title">Fullstack Developer &amp; Web Engineer</div>
+        <div class="hc-row"><span class="hc-icon">📍</span><span>Chemnitz, Germany</span></div>
+        <div class="hc-row"><span class="hc-icon">🎓</span><span>M.Sc. Web Engineering · TU Chemnitz</span></div>
+        <div class="hc-row"><span class="hc-icon">✉️</span><span>silvyrahman96@gmail.com</span></div>
+        <div class="hc-divider"></div>
+        <div class="skills-wrap">
+          <span class="skill-tag">Python</span><span class="skill-tag">Django</span>
+          <span class="skill-tag">React</span><span class="skill-tag">OpenCV</span>
+          <span class="skill-tag">MediaPipe</span><span class="skill-tag">Docker</span>
+          <span class="skill-tag">AWS</span><span class="skill-tag">ML</span>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-n">2</div><div class="stat-l">Papers</div></div>
+        <div class="stat"><div class="stat-n">6+</div><div class="stat-l">Projects</div></div>
+        <div class="stat"><div class="stat-n">3+</div><div class="stat-l">Yrs Exp</div></div>
+      </div>
+    </div>
   </div>
 </section>
 
-
-
-
-
-
-
-<!-- =================-project end ============== -->
-
-
-
-<!-- =================-Game and animation start ============== -->
-
-<section class="gameanime" id="gameanime">
-
-    <div class=" mp">
-          <h2>Research</h2>
-
-    </div>
-
-<div class="row">
-  <div class="morecontainer">
-
-    <div class="morebox">
-      <div class="morecontent">
-        <img src="4.png" alt="">
-        <p>Forecasting the Outcome of the Next ODI Cricket Matches to Be Played </p>
-        <div class="card-body">
-<a href="https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=forecasting+the+outcome+of+the+next+odi+cricket+matches+to+be+played&btnG=" class="card-link btn btn-primary">Read</a>
-<a href="https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=forecasting+the+outcome+of+the+next+odi+cricket+matches+to+be+played&btnG=" class="card-link btn btn-primary">Link</a>
-</div>
+<!-- ABOUT -->
+<div class="section-full" id="about">
+  <div class="section-inner">
+    <div class="sec-eyebrow">About Me</div>
+    <h2 class="sec-title">Crafting digital <em>experiences</em></h2>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I'm <strong>Silvy Rahman Urmi</strong>, a Fullstack Developer and Web Engineer currently pursuing my Master's degree at <strong>Technische Universität Chemnitz</strong>. My work lives at the intersection of web engineering, computer vision, and human-computer interaction.</p>
+        <p>From building Django-powered research platforms at Fraunhofer IVI to developing AI-driven interfaces that respond to eye movements and hand gestures, I love pushing the boundaries of what technology can do for people. Currently working as a <strong>Fullstack Developer</strong> at Koinon, TU Munich.</p>
+        <p>Beyond code, I'm a published researcher with work in machine learning and distributed systems — and a firm believer that the best software is the software that feels invisible.</p>
+        <div class="about-highlights">
+          <div class="ah-item"><h4>Education</h4><p>M.Sc. Web Engineering · TU Chemnitz</p></div>
+          <div class="ah-item"><h4>Research</h4><p>2 international publications</p></div>
+          <div class="ah-item"><h4>Experience</h4><p>Research, TA &amp; Fullstack Dev</p></div>
+          <div class="ah-item"><h4>Passion</h4><p>CV, ML &amp; Accessible UX</p></div>
+        </div>
       </div>
-    </div>
-
-    <div class="morebox">
-      <div class="morecontent">
-        <img src="4.png" alt="">
-        <p>HashXplorer-A Distributed System for Hash Matching </p>
-        <div class="card-body">
-<a href="https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=hashxplorer&btnG=" class="card-link btn btn-primary">Demo</a>
-<a href="https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=hashxplorer&btnG=" class="card-link btn btn-primary">Github</a>
-</div>
-      </div>
-    </div>
-
-    <div class="morebox">
-      <div class="morecontent">
-        <img src="4.png" alt="">
-        <p>Velocity detection using optical flow(Working) </p>
-        <div class="card-body">
-          <!--
-<a href="#" class="card-link btn btn-primary">Demo</a>
-<a href="#" class="card-link btn btn-primary">Github</a> -->
-</div>
-      </div>
-    </div>
-
-    <div class="morebox">
-      <div class="morecontent">
-        <img src="4.png" alt="">
-        <p>Automatic Irrigation system  </p>
-        <div class="card-body">
-                    <!--
-<a href="#" class="card-link btn btn-primary">Demo</a>
-<a href="#" class="card-link btn btn-primary">Github</a> -->
-</div>
-      </div>
-    </div>
-
-
-
-
-
-  </div>
-</div>
-
-</section>
-
-
-<!-- =================-Game and animation start ============== -->
-
-
-
-
-
-
-
-
-
-
-
-    <!-- =================-contact start ============== -->
-<section class="contact_section" id="contact">
-  <div class="container">
-    <div class=" text-center">
-    <div class="card-body">
-      <div class="card-title">
-      <h2>CONTACT WAY </h2>
-
-
-
-      </script>
-
-      </div>
-
-    </div>
-
-  </div>
-  <div class="row">
-  <div class="col-sm-3">
-    <div class="card">
-      <div class="card-body">
-        <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-        <h5 class="card-title">silvyrahman96@gmail.com</h5>
-
-        <a href="mailto:silvyrahman96@gmail.com" class="btn btn-primary" target="_blank">Email</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-3">
-    <div class="card">
-      <div class="card-body">
-          <i class="fa fa-github"></i>
-        <h5 class="card-title">silvyurmi96</h5>
-
-        <a href="https://github.com/silvyurmi96" class="btn btn-primary" target="_blank">GitHub</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-3">
-    <div class="card">
-      <div class="card-body">
-          <i class="fa fa-linkedin"></i>
-        <h5 class="card-title">silvy-rahman-urmi</h5>
-
-        <a href="https://www.linkedin.com/in/silvy-rahman-urmi-66a4571b7/" class="btn btn-primary" target="_blank">linkedin</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-3">
-    <div class="card">
-      <div class="card-body">
-                  <i class="fa fa-instagram"></i>
-        <h5 class="card-title">urmi.thieomy</h5>
-
-        <a href="#" class="btn btn-primary">instagram</a>
+      <div class="reveal" style="transition-delay:.2s">
+        <div style="background:var(--card);border:1px solid var(--border);padding:32px;">
+          <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;">Tech Stack</div>
+          <div class="skills-wrap">
+            <span class="skill-tag">Python</span><span class="skill-tag">Django</span>
+            <span class="skill-tag">JavaScript</span><span class="skill-tag">React</span>
+            <span class="skill-tag">PHP</span><span class="skill-tag">HTML/CSS</span>
+            <span class="skill-tag">OpenCV</span><span class="skill-tag">MediaPipe</span>
+            <span class="skill-tag">DeepFace</span><span class="skill-tag">Docker</span>
+            <span class="skill-tag">Minio</span><span class="skill-tag">AWS</span>
+            <span class="skill-tag">MySQL</span><span class="skill-tag">SQLite</span>
+            <span class="skill-tag">Figma</span><span class="skill-tag">Adobe XD</span>
+            <span class="skill-tag">Java</span><span class="skill-tag">C/C++</span>
+          </div>
+        </div>
+        <div class="lang-list" style="margin-top:24px;background:var(--card);border:1px solid var(--border);padding:28px;">
+          <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;">Languages</div>
+          <div class="lang-item"><span class="lang-name">Bangla</span><span class="lang-level">Native</span><div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div></div>
+          <div class="lang-item"><span class="lang-name">English</span><span class="lang-level">C1</span><div class="lang-bar"><div class="lang-fill" style="width:85%"></div></div></div>
+          <div class="lang-item"><span class="lang-name">German</span><span class="lang-level">A2</span><div class="lang-bar"><div class="lang-fill" style="width:25%"></div></div></div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+<!-- EXPERIENCE -->
+<div class="section" id="experience">
+  <div class="sec-eyebrow">Career</div>
+  <h2 class="sec-title">Work <em>Experience</em></h2>
+  <div class="timeline">
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-period">June 2025 — September 2026</div>
+      <div class="tl-role">Fullstack Developer <span style="color:var(--muted);font-weight:400;font-size:14px">· Student Job</span></div>
+      <div class="tl-company">Koinon · Technical University of Munich, Munich</div>
+      <ul class="tl-bullets">
+        <li>Building and maintaining full-stack web features for the Koinon platform.</li>
+        <li>Collaborating in an agile team environment across frontend and backend development cycles.</li>
+        <li>Contributing to platform architecture, code reviews, and feature delivery.</li>
+      </ul>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-period">2023</div>
+      <div class="tl-role">Research Assistant</div>
+      <div class="tl-company">Fraunhofer IVI · Dresden, Germany</div>
+      <ul class="tl-bullets">
+        <li>Developed a full application using the Django framework.</li>
+        <li>Managed user data storage and authentication processes.</li>
+        <li>Integrated existing projects through app ID implementation.</li>
+        <li>Established CI/CD pipeline and maintained code quality with Black &amp; Flake8.</li>
+        <li>Utilised Docker and Minio to enhance project capabilities.</li>
+      </ul>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-period">2020 — 2021</div>
+      <div class="tl-role">Teaching Assistant</div>
+      <div class="tl-company">North South University · Dhaka, Bangladesh</div>
+      <ul class="tl-bullets">
+        <li>Assisted faculty in delivering coursework and lab sessions to undergraduate students.</li>
+        <li>Supported students with programming concepts, assignments, and project guidance.</li>
+        <li>Collaborated with the department on curriculum support and assessment activities.</li>
+      </ul>
+    </div>
+
+  </div>
 </div>
 
-</section>
+<!-- PROJECTS -->
+<div class="section-full" id="projects">
+  <div class="section-inner">
+    <div class="sec-eyebrow">Work</div>
+    <h2 class="sec-title">Selected <em>Projects</em></h2>
+    <div class="projects-grid">
 
+      <div class="proj-card proj-featured">
+        <div class="proj-num">01</div>
+        <div class="proj-icon">👁️</div>
+        <div class="proj-name">Head &amp; Eye Controlled Mouse</div>
+        <div class="proj-desc">A real-time accessibility tool that lets users control their cursor entirely through head movement and eye blinks — no hands required. Uses MediaPipe facial landmark tracking, Eye Aspect Ratio (EAR) for blink detection, and smooth exponential cursor interpolation. Double-blink for left click, hold left eye closed for right click.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">Python</span><span class="proj-tag">OpenCV</span>
+          <span class="proj-tag">MediaPipe</span><span class="proj-tag">PyAutoGUI</span>
+          <span class="proj-tag">Accessibility</span><span class="proj-tag">Computer Vision</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/silvyurmi96" class="proj-link" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            View Code
+          </a>
+        </div>
+      </div>
 
+      <div class="proj-card">
+        <div class="proj-num">02</div>
+        <div class="proj-icon">🤚</div>
+        <div class="proj-name">Hand Gesture Mouse</div>
+        <div class="proj-desc">Controls the mouse cursor via hand gestures captured through a webcam. Supports cursor movement, left/right click via pinch gestures, and two-finger scroll mode — entirely hands-free interaction.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">Python</span><span class="proj-tag">MediaPipe</span>
+          <span class="proj-tag">OpenCV</span><span class="proj-tag">Gesture Recognition</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/silvyurmi96" class="proj-link" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            View Code
+          </a>
+        </div>
+      </div>
 
-  <!-- =================-contact end ============== -->
+      <div class="proj-card">
+        <div class="proj-num">03</div>
+        <div class="proj-icon">😊</div>
+        <div class="proj-name">Real-Time Emotion Detector</div>
+        <div class="proj-desc">Detects emotion, age and gender from a live webcam feed using DeepFace. Features bias correction, EMA confidence smoothing, and a dynamic sidebar with per-emotion confidence bars.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">Python</span><span class="proj-tag">DeepFace</span>
+          <span class="proj-tag">OpenCV</span><span class="proj-tag">Deep Learning</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/silvyurmi96" class="proj-link" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            View Code
+          </a>
+        </div>
+      </div>
 
+      <div class="proj-card">
+        <div class="proj-num">04</div>
+        <div class="proj-icon">🚗</div>
+        <div class="proj-name">Velocity Estimation via Optical Flow</div>
+        <div class="proj-desc">Research-level project addressing road safety in Bangladesh using computer vision. Applies optical flow algorithms to estimate vehicle velocities from video footage to support traffic analysis and accident prevention.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">Python</span><span class="proj-tag">OpenCV</span>
+          <span class="proj-tag">Optical Flow</span><span class="proj-tag">Research</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/silvyurmi96" class="proj-link" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            View Code
+          </a>
+        </div>
+      </div>
 
-    <!-- footer start -->
+      <div class="proj-card">
+        <div class="proj-num">05</div>
+        <div class="proj-icon">🏥</div>
+        <div class="proj-name">Hospital Management System</div>
+        <div class="proj-desc">A web-based system enabling clinic administrators to manage patients, doctors and staff with full CRUD operations. Role-based access control with a clean admin panel interface.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">PHP</span><span class="proj-tag">MySQL</span>
+          <span class="proj-tag">HTML/CSS</span><span class="proj-tag">Web Dev</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/silvyurmi96" class="proj-link" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            View Code
+          </a>
+        </div>
+      </div>
 
+      <div class="proj-card">
+        <div class="proj-num">06</div>
+        <div class="proj-icon">🎓</div>
+        <div class="proj-name">Coaching Center System</div>
+        <div class="proj-desc">A full web application for managing coaching centre operations — student records, schedules, and instructor assignments — with a PHP &amp; MySQL backend and a responsive frontend.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">HTML5</span><span class="proj-tag">CSS3</span>
+          <span class="proj-tag">JavaScript</span><span class="proj-tag">PHP</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/silvyurmi96/327-project" class="proj-link" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Live Demo
+          </a>
+          <a href="https://github.com/silvyurmi96/327-project" class="proj-link" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            View Code
+          </a>
+        </div>
+      </div>
 
-<footer class="foot_clearfix ">
+    </div>
+  </div>
+</div>
 
-  <h2 class="log"><span>S</span>ilvy Rahman Urmi</h2>
+<!-- RESEARCH -->
+<div class="section" id="research">
+  <div class="sec-eyebrow">Publications</div>
+  <h2 class="sec-title">Research &amp; <em>Publications</em></h2>
+  <div class="research-list">
+    <div class="res-item">
+      <div class="res-year">2019</div>
+      <div class="res-content">
+        <h3>Forecasting the Outcome of the Next ODI Cricket Matches to Be Played</h3>
+        <p>Md. Minhazul Abedin, <strong>Silvy Urmi</strong>, Md. Samiur Rahman</p>
+        <div class="res-journal">International Journal of Recent Technology and Engineering · Vol. 8, No. 4 · DOI: 10.35940/ijrte.d4505.118419</div>
+      </div>
+      <a href="https://scholar.google.com/scholar?q=forecasting+the+outcome+of+the+next+odi+cricket+matches+to+be+played" target="_blank" class="res-link">Read ↗</a>
+    </div>
+    <div class="res-item">
+      <div class="res-year">2019</div>
+      <div class="res-content">
+        <h3>HashXplorer — A Distributed System for Hash Matching</h3>
+        <p>Md. Amdadul Bari, Rabeya Sultana, <strong>Silvy Rahman Urmi</strong>, AKM Bahalul Haque</p>
+        <div class="res-journal">International Research Journal of Engineering and Technology (IRJET) · Vol. 4, Issue 09, Sep 2019</div>
+      </div>
+      <a href="https://scholar.google.com/scholar?q=hashxplorer" target="_blank" class="res-link">Read ↗</a>
+    </div>
+  </div>
+</div>
 
-  <div class="social-links">
+<!-- SKILLS -->
+<div class="section-full">
+  <div class="section-inner">
+    <div class="sec-eyebrow">Expertise</div>
+    <h2 class="sec-title">Skills &amp; <em>Technologies</em></h2>
+    <div class="skills-section-grid">
+      <div class="skill-group">
+        <h3>Frontend</h3>
+        <div class="skill-items">
+          <div class="sk-item">HTML5 &amp; CSS3</div>
+          <div class="sk-item">JavaScript</div>
+          <div class="sk-item">React</div>
+          <div class="sk-item">Figma &amp; Adobe XD</div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Backend</h3>
+        <div class="skill-items">
+          <div class="sk-item">Python &amp; Django</div>
+          <div class="sk-item">PHP</div>
+          <div class="sk-item">Java &amp; C/C++</div>
+          <div class="sk-item">REST APIs</div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>AI / Computer Vision</h3>
+        <div class="skill-items">
+          <div class="sk-item">OpenCV</div>
+          <div class="sk-item">MediaPipe</div>
+          <div class="sk-item">DeepFace</div>
+          <div class="sk-item">Machine Learning</div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>DevOps &amp; Cloud</h3>
+        <div class="skill-items">
+          <div class="sk-item">Docker &amp; Minio</div>
+          <div class="sk-item">AWS</div>
+          <div class="sk-item">CI/CD Pipelines</div>
+          <div class="sk-item">MySQL &amp; SQLite</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <div class="row">
-      <div class=" col span_1_of_4 ">
-        <a href="" class="">
-          <i class="fa fa-github"></i>
+<!-- CONTACT -->
+<div class="section" id="contact">
+  <div class="sec-eyebrow">Say Hello</div>
+  <div class="contact-wrap">
+    <div class="contact-left reveal">
+      <h2>Let's work <strong>Together.</strong></h2>
+      <p>Whether you have a project in mind, a research collaboration, or just want to connect — I'm always open to interesting conversations.</p>
+      <div class="contact-links">
+        <a href="mailto:silvyrahman96@gmail.com" class="contact-link-item">
+          <span class="cli-icon">✉️</span>
+          <div><div class="cli-label">Email</div><div class="cli-value">silvyrahman96@gmail.com</div></div>
         </a>
-      </div>
-      <div class=" col span_1_of_4 ">
-        <a href="" class="">
-          <i class="fa fa-linkedin"></i>
+        <a href="https://github.com/silvyurmi96" target="_blank" class="contact-link-item">
+          <span class="cli-icon">💻</span>
+          <div><div class="cli-label">GitHub</div><div class="cli-value">silvyurmi96</div></div>
         </a>
-      </div>
-      <div class=" col span_1_of_4 ">
-        <a href="" class="">
-          <i class="fab fa-slideshare"></i>
-
+        <a href="https://www.linkedin.com/in/silvy-rahman-urmi-66a4571b7/" target="_blank" class="contact-link-item">
+          <span class="cli-icon">🔗</span>
+          <div><div class="cli-label">LinkedIn</div><div class="cli-value">silvy-rahman-urmi</div></div>
         </a>
-      </div>
-      <div class=" col span_1_of_4 ">
-        <a href="" class="">
-          <i class="fa fa-instagram"></i>
+        <a href="https://silvyurmi96.github.io/" target="_blank" class="contact-link-item">
+          <span class="cli-icon">🌐</span>
+          <div><div class="cli-label">Portfolio</div><div class="cli-value">silvyurmi96.github.io</div></div>
         </a>
       </div>
     </div>
-
+    <div class="reveal" style="transition-delay:.2s;">
+      <div style="border:1px solid var(--border);padding:48px 40px;background:var(--card);position:relative;">
+        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent3));"></div>
+        <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;">Education Timeline</div>
+        <div style="display:flex;flex-direction:column;gap:24px;">
+          <div>
+            <div style="font-size:10px;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px;">2021 — Present</div>
+            <div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:700;">M.Sc. Web Engineering</div>
+            <div style="font-size:12px;color:var(--muted);">Technische Universität Chemnitz</div>
+          </div>
+          <div style="height:1px;background:var(--border);"></div>
+          <div>
+            <div style="font-size:10px;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px;">2015 — 2020</div>
+            <div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:700;">B.Sc. Computer Science &amp; Engineering</div>
+            <div style="font-size:12px;color:var(--muted);">North South University, Dhaka · CGPA 3.07/4</div>
+          </div>
+          <div style="height:1px;background:var(--border);"></div>
+          <div>
+            <div style="font-size:10px;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px;">2012 — 2014</div>
+            <div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:700;">Higher Secondary Certificate (HSC)</div>
+            <div style="font-size:12px;color:var(--muted);">Cambrian College, Dhaka · GPA 5/5</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
 
-  <div class="copy">© Silvy Rahman Urmi | All Right Reserved 2020.
-  </div>
+<!-- FOOTER -->
+<footer>
+  <div class="foot-name">Silvy Rahman Urmi</div>
+  <div class="foot-copy">© 2026 · Built with passion in Chemnitz 🇩🇪</div>
 </footer>
-          <!-- footer end -->
 
+<script>
+// Custom cursor
+const cur = document.getElementById('cur');
+const ring = document.getElementById('cur-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+(function animRing(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing);})();
 
+// Nav
+const nav=document.getElementById('navbar');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60));
 
+// Scroll reveal
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.12});
+document.querySelectorAll('.reveal,.tl-item,.proj-card,.res-item').forEach(el=>obs.observe(el));
+
+// Stagger
+document.querySelectorAll('.proj-card').forEach((c,i)=>c.style.transitionDelay=(i*.08)+'s');
+document.querySelectorAll('.res-item').forEach((c,i)=>c.style.transitionDelay=(i*.1)+'s');
+document.querySelectorAll('.tl-item').forEach((c,i)=>c.style.transitionDelay=(i*.12)+'s');
+</script>
 </body>
-
 </html>
